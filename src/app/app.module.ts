@@ -11,6 +11,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 import { UserDetailsForAdminComponent } from './user-details-for-admin/user-details-for-admin.component';
 import { ActivateUserComponent } from './activate-user/activate-user.component';
+import { ProductlistComponent } from './productlist/productlist.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ActivateUserComponent } from './activate-user/activate-user.component';
     LoginComponent,
     AdminloginComponent,
     UserDetailsForAdminComponent,
-    ActivateUserComponent
+    ActivateUserComponent,
+    ProductlistComponent
   ],
   imports: [
     BrowserModule,
