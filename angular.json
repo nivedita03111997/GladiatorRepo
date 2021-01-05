@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "FinanceProject"
+  "defaultProject": "FinanceProject",
+  "cli": {
+    "analytics": "63b56ae7-2706-4b54-91c2-b3e06880a92f"
+  }
 }
