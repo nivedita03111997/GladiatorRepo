@@ -9,11 +9,14 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { UserDetailsForAdminComponent } from './user-details-for-admin/user-details-for-admin.component';
 import { ActivateUserComponent } from './activate-user/activate-user.component';
 import { ProductlistComponent } from './productlist/productlist.component';
+
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+
 
 
 
@@ -33,8 +36,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ChangepasswordComponent,
     ForgotpasswordComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    ProductdetailsComponent
 
+ 
   ],
   imports: [
     BrowserModule,
