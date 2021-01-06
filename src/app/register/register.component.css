@@ -30,6 +30,9 @@ h2{
     text-align: center;
     
 }
+#err{
+    color: red;
+}
 form {
      width: 700px;
     margin: 0 auto; 

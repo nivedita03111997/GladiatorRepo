@@ -3,13 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
+import { ProductlistComponent } from './productlist/productlist.component';
+
 
 const routes: Routes = [
-  // { path:'forgotpassword',component:ForgotpasswordComponent}
   {path:'login',component:LoginComponent},
-  {path:'forgotpassword',component:ForgotpasswordComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'',redirectTo:'login',pathMatch:'full'}
+  {path:'registerCustomer',component:RegisterComponent},
+  {path:'dashboard',component:DashboardComponent},
+  {path:'home',component:HomeComponent},
+  {path:'adminLogin',component:AdminloginComponent},
+  {path:'productList',component:ProductlistComponent},
+  {path:'',redirectTo:'home',pathMatch:'full'}
+
 ];
 
 @NgModule({
