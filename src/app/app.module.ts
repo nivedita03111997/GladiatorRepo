@@ -11,6 +11,8 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -28,7 +30,9 @@ import { FormsModule } from '@angular/forms';
     ActivateUserComponent,
     ProductlistComponent,
     ChangepasswordComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    RegisterComponent,
+    HomeComponent
 
   ],
   imports: [
