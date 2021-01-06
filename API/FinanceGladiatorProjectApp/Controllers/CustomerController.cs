@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -44,18 +44,18 @@ namespace FinanceGladiatorProjectApp.Controllers
         [HttpPost]
         public HttpResponseMessage Register(tbl_Customer customer)
         {
-            DbContextTransaction transaction = entities.Database.BeginTransaction();
-            try
-            {
-                entities.tbl_Customer.Add(customer);
+      //DbContextTransaction transaction = entities.Database.BeginTransaction();
+      //try
+      //{
+        entities.tbl_Customer.Add(customer);
                 entities.SaveChanges();
-                transaction.Commit();
-            }
-            catch (Exception)
-            {
-                transaction.Rollback();
-                return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Could not register customer");
-            }
+                //transaction.Commit();
+            //}
+            //catch (Exception)
+            //{
+                //transaction.Rollback();
+                //return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Could not register customer");
+            //}
             return Request.CreateResponse(HttpStatusCode.Created, customer);
 
         }
