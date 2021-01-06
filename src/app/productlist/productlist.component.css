@@ -1,9 +1,8 @@
 header {
-    border: blue;
     background-color:white;
     padding: 30px;
     text-align: right;
-    border: black;
+    border:black;
   }
 
 .down{
@@ -29,6 +28,6 @@ header {
 }
 
 table{
-    border:1 solid black;
+    border:1px solid black;
 }
 
