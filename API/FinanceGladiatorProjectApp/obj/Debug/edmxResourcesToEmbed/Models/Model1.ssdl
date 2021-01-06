@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbproject_NEWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Admin">
+    <Key>
+      <PropertyRef Name="Admin_Id" />
+    </Key>
+    <Property Name="Admin_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Card">
+    <Key>
+      <PropertyRef Name="Card_Id" />
+    </Key>
+    <Property Name="Card_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_Id" Type="int" />
+    <Property Name="Card_Number" Type="varchar" MaxLength="12" />
+    <Property Name="Valid_till" Type="varchar" MaxLength="10" />
+    <Property Name="Card_Type" Type="varchar" MaxLength="10" />
+    <Property Name="Total_credit" Type="float" />
+    <Property Name="Card_cost" Type="int" />
+    <Property Name="Status" Type="varchar" MaxLength="10" />
+    <Property Name="ApprovedBy" Type="int" />
+    <Property Name="credit_used" Type="float" />
+  </EntityType>
+  <EntityType Name="tbl_Customer">
+    <Key>
+      <PropertyRef Name="Customer_Id" />
+    </Key>
+    <Property Name="Customer_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Date_of_Birth" Type="date" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="Phone_No" Type="varchar" MaxLength="20" />
+    <Property Name="Username" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Passwords" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="40" />
+    <Property Name="Card_Type" Type="varchar" MaxLength="10" />
+    <Property Name="Select_Bank" Type="varchar" MaxLength="10" />
+    <Property Name="Saving_Account_No" Type="varchar" MaxLength="20" />
+    <Property Name="IFSC_Code" Type="varchar" MaxLength="20" />
+    <Property Name="Documents" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tbl_EMI">
+    <Key>
+      <PropertyRef Name="EMI_Id" />
+    </Key>
+    <Property Name="EMI_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tenure_period" Type="int" />
+    <Property Name="Product_cost" Type="money" />
+    <Property Name="Total_Amount_Paid" Type="money" />
+    <Property Name="Card_Id" Type="int" />
+    <Property Name="Product_Id" Type="int" />
+    <Property Name="EMI_Due_Date" Type="date" />
+    <Property Name="EMI_Start_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="tbl_FAQ">
+    <Key>
+      <PropertyRef Name="Faq_Id" />
+    </Key>
+    <Property Name="Faq_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_Id" Type="int" />
+    <Property Name="Questions" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tbl_Product">
+    <Key>
+      <PropertyRef Name="Product_Id" />
+    </Key>
+    <Property Name="Product_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_Name" Type="varchar" MaxLength="10" />
+    <Property Name="Product_Image" Type="varbinary(max)" />
+    <Property Name="Product_Description" Type="varchar" MaxLength="50" />
+    <Property Name="Product_Cost" Type="int" />
+    <Property Name="Processing_fees" Type="money" />
+  </EntityType>
+  <EntityType Name="tbl_Transaction">
+    <Key>
+      <PropertyRef Name="Transaction_Id" />
+    </Key>
+    <Property Name="Transaction_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMI_Id" Type="int" />
+    <Property Name="Product_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Transaction_Date" Type="date" />
+    <Property Name="Transaction_Amount" Type="money" />
+  </EntityType>
+  <Association Name="FK__tbl_Card__Approv__48CFD27E">
+    <End Role="tbl_Admin" Type="Self.tbl_Admin" Multiplicity="0..1" />
+    <End Role="tbl_Card" Type="Self.tbl_Card" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Admin">
+        <PropertyRef Name="Admin_Id" />
+      </Principal>
+      <Dependent Role="tbl_Card">
+        <PropertyRef Name="ApprovedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Card__Custom__46E78A0C">
+    <End Role="tbl_Customer" Type="Self.tbl_Customer" Multiplicity="0..1" />
+    <End Role="tbl_Card" Type="Self.tbl_Card" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Customer">
+        <PropertyRef Name="Customer_Id" />
+      </Principal>
+      <Dependent Role="tbl_Card">
+        <PropertyRef Name="Customer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_EMI__Card_Id__534D60F1">
+    <End Role="tbl_Card" Type="Self.tbl_Card" Multiplicity="0..1" />
+    <End Role="tbl_EMI" Type="Self.tbl_EMI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Card">
+        <PropertyRef Name="Card_Id" />
+      </Principal>
+      <Dependent Role="tbl_EMI">
+        <PropertyRef Name="Card_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_EMI__Product__5441852A">
+    <End Role="tbl_Product" Type="Self.tbl_Product" Multiplicity="0..1" />
+    <End Role="tbl_EMI" Type="Self.tbl_EMI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Product">
+        <PropertyRef Name="Product_Id" />
+      </Principal>
+      <Dependent Role="tbl_EMI">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_FAQ__Product__5AEE82B9">
+    <End Role="tbl_Product" Type="Self.tbl_Product" Multiplicity="0..1" />
+    <End Role="tbl_FAQ" Type="Self.tbl_FAQ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Product">
+        <PropertyRef Name="Product_Id" />
+      </Principal>
+      <Dependent Role="tbl_FAQ">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Trans__EMI_I__571DF1D5">
+    <End Role="tbl_EMI" Type="Self.tbl_EMI" Multiplicity="0..1" />
+    <End Role="tbl_Transaction" Type="Self.tbl_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_EMI">
+        <PropertyRef Name="EMI_Id" />
+      </Principal>
+      <Dependent Role="tbl_Transaction">
+        <PropertyRef Name="EMI_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="proc_AdminLoginCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="un" Type="varchar" Mode="In" />
+    <Parameter Name="pass" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_LoginCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="un" Type="varchar" Mode="In" />
+    <Parameter Name="pass" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="dbproject_NEWModelStoreContainer">
+    <EntitySet Name="tbl_Admin" EntityType="Self.tbl_Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Card" EntityType="Self.tbl_Card" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_EMI" EntityType="Self.tbl_EMI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_FAQ" EntityType="Self.tbl_FAQ" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Product" EntityType="Self.tbl_Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Transaction" EntityType="Self.tbl_Transaction" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tbl_Card__Approv__48CFD27E" Association="Self.FK__tbl_Card__Approv__48CFD27E">
+      <End Role="tbl_Admin" EntitySet="tbl_Admin" />
+      <End Role="tbl_Card" EntitySet="tbl_Card" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Card__Custom__46E78A0C" Association="Self.FK__tbl_Card__Custom__46E78A0C">
+      <End Role="tbl_Customer" EntitySet="tbl_Customer" />
+      <End Role="tbl_Card" EntitySet="tbl_Card" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_EMI__Card_Id__534D60F1" Association="Self.FK__tbl_EMI__Card_Id__534D60F1">
+      <End Role="tbl_Card" EntitySet="tbl_Card" />
+      <End Role="tbl_EMI" EntitySet="tbl_EMI" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_EMI__Product__5441852A" Association="Self.FK__tbl_EMI__Product__5441852A">
+      <End Role="tbl_Product" EntitySet="tbl_Product" />
+      <End Role="tbl_EMI" EntitySet="tbl_EMI" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_FAQ__Product__5AEE82B9" Association="Self.FK__tbl_FAQ__Product__5AEE82B9">
+      <End Role="tbl_Product" EntitySet="tbl_Product" />
+      <End Role="tbl_FAQ" EntitySet="tbl_FAQ" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Trans__EMI_I__571DF1D5" Association="Self.FK__tbl_Trans__EMI_I__571DF1D5">
+      <End Role="tbl_EMI" EntitySet="tbl_EMI" />
+      <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
