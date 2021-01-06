@@ -1,0 +1,22 @@
+
+header {
+    background-color:white;
+    padding: 30px;
+    text-align: right;
+    border: black;
+}
+table{
+    border:1px solid black;
+}
+.p1{
+    height: 200px;
+    width: 200;
+    float: left;
+}
+
+.e{
+    text-align: center;
+}
+#btntwo{
+    float: left;
+}

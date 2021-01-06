@@ -1,0 +1,120 @@
+
+    <body>
+    <!-- <nav>
+        <a href="#" style="margin: 50px 20px 0 150px; color:white;text-decoration: none">About us</a>
+        <a href="#" style="margin: 50px 20px 0 20px; color:white;text-decoration: none">Contact us</a>
+        <a href="#" style="margin: 50px 20px 0 20px; color:white;text-decoration: none">ABC</a>
+        <a href="#" style="margin: 50px 20px 0 20px; color:white;text-decoration: none">Product List</a>
+        </nav> -->
+    
+    <div>
+        
+        <form  [formGroup]="registerForm" (ngSubmit)="registerCustomer()">
+            <h2>REGISTRATION FORM</h2>
+            <div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td><input type="text" formControlName="name" [(ngModel)]="customer.Customer_Name"></td>
+                    <td><div id="err" *ngIf="submitted && f.name.errors">
+                        <div *ngIf="f.name.errors.required">Name is required</div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <th>Date Of Birth</th>
+                    <td><input type="date" formControlName="dob" [(ngModel)]="customer.Date_of_Birth"></td>
+                    <td><div id="err"  *ngIf="submitted && f.dob.errors">
+                        <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <th>Email Id</th>
+                    <td><input type="text" formControlName="email" [(ngModel)]="customer.Email"></td>
+                    <td><div id="err"  *ngIf="submitted && f.email.errors">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+        
+                    </div></td>
+                </tr>
+                <tr>
+                    <th>Phone No</th>
+                    <td><input type="text" formControlName="phone" [(ngModel)]="customer.Phone_No"></td>
+                    <td><div id="err"  *ngIf="submitted && f.email.errors">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+        
+                    </div></td>
+                </tr>
+                <tr>
+                    <th>User Name</th>
+                    <td><input type="text" formControlName="username" [(ngModel)]="customer.Username"></td>
+                    <td><div id="err"  *ngIf="submitted && f.username.errors">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td><input type="password" formControlName="password" [(ngModel)]="customer.Passwords"></td>
+                    <td><div id="err"  *ngIf="submitted && f.username.errors">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <th>Confirm Password</th>
+                    <td><input type="password" formControlName="confirmPassword"></td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td><textarea cols="25"  formControlName="address" [(ngModel)]="customer.Address"></textarea></td>
+                    <td><div id="err"  *ngIf="submitted && f.address.errors">
+                        <div *ngIf="f.address.errors.required">Password is required</div>
+                    </div></td>
+                </tr>
+                <tr>
+                   <th>Card Type</th>
+                    <td><input type="radio" value="Gold" class="input" formControlName="cardtype" [(ngModel)]="customer.Card_Type">Gold
+                    <input type="radio" value="Titanium" class="input" formControlName="cardtype" [(ngModel)]="customer.Card_Type">Titanium</td>
+                    <td><div id="err"  *ngIf="submitted && f.cardtype.errors">
+                        <div *ngIf="f.cardtype.errors.required">Password is required</div>
+                    </div></td>
+                </tr> 
+                <tr>
+                    <th>Select Bank</th>
+                    <td><select  formControlName="banks" [(ngModel)]="customer.Select_Bank">
+                        <option value="HSBC Bank">HSBC Bank</option>
+                        <option value="State Bank of India">State Bank of India</option>
+                        <option value="City Bank">City Bank</option>
+                        <option value="Axis Bank">Axis Bank</option>
+                        <option value="HDFC Bank">HDFC Bank</option>
+                      </select></td>
+                      <td><div id="err"  *ngIf="submitted && f.banks.errors">
+                        <div *ngIf="f.banks.errors.required">Password is required</div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <th>Saving Account No:</th>
+                    <td><input type="text" formControlName="accountno" [(ngModel)]="customer.Saving_Account_No"></td>
+                    <td><div id="err"  *ngIf="submitted && f.accountno.errors">
+                        <div *ngIf="f.accountno.errors.required">Password is required</div>
+                    </div></td>
+                </tr>
+                <tr>
+                    <th>IFSC code</th>
+                    <td><input type="text" formControlName="ifsc" [(ngModel)]="customer.IFSC_Code"></td>
+                    <td><div id="err"  *ngIf="submitted && f.accountno.errors">
+                        <div *ngIf="f.accountno.errors.required">Password is required</div>
+                    </div></td>>
+                </tr>
+                
+            </table>
+                </div>
+            <div style="text-align: center;">
+                <button >Register</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button (click)="onReset()">Reset</button>
+    
+            <p>Already a member?<a href="#">Login Here</a></p>
+        </div>
+        </form>  
+          
+    </div>
+    </body>

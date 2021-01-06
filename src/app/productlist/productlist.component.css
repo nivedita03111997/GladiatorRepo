@@ -1,8 +1,8 @@
+
 header {
     background-color:white;
     padding: 30px;
     text-align: right;
-    border:black;
   }
 
 .down{
@@ -12,7 +12,7 @@ header {
     height: 200px;
     width: 200;
     float: left;
-
+    color: cyan;
 }
 
 .p2{
@@ -29,5 +29,9 @@ header {
 
 table{
     border:1px solid black;
+}
+
+.btn{
+    color: cyan;
 }
 
