@@ -2,14 +2,25 @@
     <h1>ADMIN LOGIN</h1>
 </div>
 <div class="loginfeilds">
-    <label>USERNAME </label>
-    <input type="text" placeholder="Enter Username">
+    <form [formGroup]="adminForm" (ngSubmit)="adminCheck()">
+        <label>USERNAME </label>
+        <input type="text"  formControlName="username">
+        <div id="err" *ngIf="submitted && f.username.errors">
+            <div *ngIf="f.username.errors.required">Name is required</div>
+        </div>
+
     <br>
     <br>
+
     <label>PASSWORD </label>
-    <input type="text" placeholder="Enter Password">
-    <br><br>
-</div>
-<div>
-    <button (click)="login()">LOG IN</button> 
+    <input type="text"  formControlName="password">
+    <div id="err" *ngIf="submitted && f.password.errors">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+    </div>
+
+    <br>
+    <br>
+
+    <button>LOG IN</button> 
+    </form>
 </div>

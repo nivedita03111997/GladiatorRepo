@@ -17,3 +17,7 @@ button{
 .register{
     margin-left: 700px;
 }
+
+#err{
+    color:red;
+}

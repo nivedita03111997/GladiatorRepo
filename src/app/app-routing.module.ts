@@ -7,6 +7,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { ProductlistComponent } from './productlist/productlist.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 
 const routes: Routes = [
@@ -16,8 +17,9 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'adminLogin',component:AdminloginComponent},
   {path:'productList',component:ProductlistComponent},
+  {path:'forgotpassword',component:ForgotpasswordComponent},
+  {path:'changepassword',component:ChangepasswordComponent},
   {path:'',redirectTo:'home',pathMatch:'full'}
-
 ];
 
 @NgModule({
