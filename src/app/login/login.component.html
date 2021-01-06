@@ -9,14 +9,15 @@
     <label>PASSWORD </label>
     <input type="text" placeholder="Enter Password">
     <br><br>
-</div>
-<div>
-    <button (click)="login()">LOG IN</button> <a href="#" id="forgot">Forgot Password?</a>
+    <button (click)="login()">LOG IN</button><p>    </p>
+    <a [routerLink]="['/forgotpassword']" id="forgot">Forgot Password?</a>
 </div>
 <br>
 <div class="register">
     New User ? <a href="#">Register here</a>
 </div>
+
+
     
 
 

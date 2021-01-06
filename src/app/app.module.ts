@@ -8,6 +8,8 @@ import { UserDetailsForAdminComponent } from './user-details-for-admin/user-deta
 import { ActivateUserComponent } from './activate-user/activate-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductlistComponent } from './productlist/productlist.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 
 
@@ -23,7 +25,9 @@ import { ProductlistComponent } from './productlist/productlist.component';
     AdminloginComponent,
     UserDetailsForAdminComponent,
     ActivateUserComponent,
-    ProductlistComponent
+    ProductlistComponent,
+    ChangepasswordComponent,
+    ForgotpasswordComponent
 
   ],
   imports: [
