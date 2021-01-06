@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbproject_NEWModelStoreContainer" CdmEntityContainer="dbproject_NEWEntities1">
+    <EntitySetMapping Name="tbl_Admin">
+      <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_Admin">
+        <MappingFragment StoreEntitySet="tbl_Admin">
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Card">
+      <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_Card">
+        <MappingFragment StoreEntitySet="tbl_Card">
+          <ScalarProperty Name="Card_Id" ColumnName="Card_Id" />
+          <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+          <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
+          <ScalarProperty Name="Valid_till" ColumnName="Valid_till" />
+          <ScalarProperty Name="Card_Type" ColumnName="Card_Type" />
+          <ScalarProperty Name="Total_credit" ColumnName="Total_credit" />
+          <ScalarProperty Name="Card_cost" ColumnName="Card_cost" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="credit_used" ColumnName="credit_used" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Customer">
+      <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_Customer">
+        <MappingFragment StoreEntitySet="tbl_Customer">
+          <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Passwords" ColumnName="Passwords" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Card_Type" ColumnName="Card_Type" />
+          <ScalarProperty Name="Select_Bank" ColumnName="Select_Bank" />
+          <ScalarProperty Name="Saving_Account_No" ColumnName="Saving_Account_No" />
+          <ScalarProperty Name="IFSC_Code" ColumnName="IFSC_Code" />
+          <ScalarProperty Name="Documents" ColumnName="Documents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EMI">
+      <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_EMI">
+        <MappingFragment StoreEntitySet="tbl_EMI">
+          <ScalarProperty Name="EMI_Id" ColumnName="EMI_Id" />
+          <ScalarProperty Name="Tenure_period" ColumnName="Tenure_period" />
+          <ScalarProperty Name="Product_cost" ColumnName="Product_cost" />
+          <ScalarProperty Name="Total_Amount_Paid" ColumnName="Total_Amount_Paid" />
+          <ScalarProperty Name="Card_Id" ColumnName="Card_Id" />
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+          <ScalarProperty Name="EMI_Due_Date" ColumnName="EMI_Due_Date" />
+          <ScalarProperty Name="EMI_Start_Date" ColumnName="EMI_Start_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_FAQ">
+      <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_FAQ">
+        <MappingFragment StoreEntitySet="tbl_FAQ">
+          <ScalarProperty Name="Faq_Id" ColumnName="Faq_Id" />
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+          <ScalarProperty Name="Questions" ColumnName="Questions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Product">
+      <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_Product">
+        <MappingFragment StoreEntitySet="tbl_Product">
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Product_Image" ColumnName="Product_Image" />
+          <ScalarProperty Name="Product_Description" ColumnName="Product_Description" />
+          <ScalarProperty Name="Product_Cost" ColumnName="Product_Cost" />
+          <ScalarProperty Name="Processing_fees" ColumnName="Processing_fees" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Transaction">
+      <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_Transaction">
+        <MappingFragment StoreEntitySet="tbl_Transaction">
+          <ScalarProperty Name="Transaction_Id" ColumnName="Transaction_Id" />
+          <ScalarProperty Name="EMI_Id" ColumnName="EMI_Id" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
+          <ScalarProperty Name="Transaction_Amount" ColumnName="Transaction_Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_AdminLoginCheck" FunctionName="dbproject_NEWModel.Store.proc_AdminLoginCheck">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_AdminLoginCheck_Result">
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_LoginCheck" FunctionName="dbproject_NEWModel.Store.proc_LoginCheck">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_LoginCheck_Result">
+          <ScalarProperty Name="Customer_id" ColumnName="Customer_id" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
