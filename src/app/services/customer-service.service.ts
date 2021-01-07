@@ -20,6 +20,9 @@ export class CustomerServiceService {
    public loginCHeckFromApi(customer:Customer){​​
     return this.httpClient.post("http://localhost:65456/api/customer/Login",customer);
   }​​
+  public getCardByCustomerId(id:number){
+    return this.httpClient.get("http://localhost:65456/api/card/"+id);
+  }
   public getCustomerById(id:number){
     return this.httpClient.get("http://localhost:65456/api/customer/"+id);
   }

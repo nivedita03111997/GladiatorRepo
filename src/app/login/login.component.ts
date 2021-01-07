@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     this.customerService.loginCHeckFromApi(this.customerlogin).subscribe(
       c=>{ this.customerId=c;this.errMsg=undefined,
-        (this.customerId!=null)? this.router.navigate(['dashboard'],this.customerId):{}
+        (this.customerId!=null)? this.router.navigate(['dashboard/'+this.customerId]):{}
         },
       err=>{this.errMsg=err.error.Message}
      );

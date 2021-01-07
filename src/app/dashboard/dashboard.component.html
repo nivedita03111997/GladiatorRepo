@@ -2,18 +2,18 @@
 
 <div id="box">
     <span style="float: right;color:red;">LFI</span><br>
-    <span>Card Number:</span><br>
-    <span>Name:</span><br>
-    <span>VAlid till:</span><br>
-    <span>CARD TYPE:</span><br>
+    <span>Card Number:{{card.Card_Number}}</span><br>
+    <span>Name:{{customer.Customer_Name}}</span><br>
+    <span>VAlid till:{{card.Valid_till}}</span><br>
+    <span>CARD TYPE:{{card.Card_Type}}</span><br>
 </div>
 <div id="gr">
-    <span>ACTIVATED</span>
+    <span>{{card.Status}}</span>
 </div>
 <br><br>
-<span>TOTAL CREDIT:</span><br>
-<span>CREDIT USED:</span><br>
-<span>REMAINING CREDIT:</span>
+<span>TOTAL CREDIT:{{card.Total_credit}}</span><br>
+<span>CREDIT USED:{{card.Credit_Used}}</span><br>
+<span>REMAINING CREDIT:{{card.Total_credit-card.Credit_Used}}</span>
 <br><br>
 <div id="header">PRODUCTS PURCHASED</div>
 <span> NAME:</span>       <span>AMOUNT:</span>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -38,7 +38,7 @@ namespace FinanceGladiatorProjectApp.Controllers
             {
                 card.Customer_Id = customer.Customer_Id;
                 card.Card_Number = RandomDigits(10);
-                card.Valid_till = DateTime.Today.AddYears(2).Date.ToString().Substring(0,10);
+                card.Valid_till = DateTime.Today.AddYears(2).Date;
                 card.Card_Type = customer.Card_Type;
                 card.Total_credit = customer.Card_Type == "gold" ? 50000 : 100000;
                 card.credit_used = 0;

@@ -15,7 +15,7 @@
     <Property Name="Card_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Customer_Id" Type="int" />
     <Property Name="Card_Number" Type="varchar" MaxLength="12" />
-    <Property Name="Valid_till" Type="varchar" MaxLength="10" />
+    <Property Name="Valid_till" Type="date" />
     <Property Name="Card_Type" Type="varchar" MaxLength="10" />
     <Property Name="Total_credit" Type="decimal" Precision="18" Scale="0" />
     <Property Name="Card_cost" Type="int" />

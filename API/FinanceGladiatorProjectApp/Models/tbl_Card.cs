@@ -13,7 +13,7 @@ namespace FinanceGladiatorProjectApp.Models
     using System.Collections.Generic;
   using System.Runtime.Serialization;
 
-  [DataContract]
+    [DataContract]
     public partial class tbl_Card
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,29 +24,27 @@ namespace FinanceGladiatorProjectApp.Models
 
         [DataMember]
         public int Card_Id { get; set; }
-        [DataMember]
-        public Nullable<int> Customer_Id { get; set; }
-        [DataMember]
-        public string Card_Number { get; set; }
-        [DataMember]
-        public string Valid_till { get; set; }
-        [DataMember]
-        public string Card_Type { get; set; }
-        [DataMember]
-        public Nullable<decimal> Total_credit { get; set; }
-        [DataMember]
-        public Nullable<int> Card_cost { get; set; }
-        [DataMember]
-        public string Status { get; set; }
-        [DataMember]
-        public Nullable<int> ApprovedBy { get; set; }
-        [DataMember]
-        public Nullable<decimal> credit_used { get; set; }
-     
-
-    public virtual tbl_Admin tbl_Admin { get; set; }
-   
-    public virtual tbl_Customer tbl_Customer { get; set; }
+    [DataMember]
+    public Nullable<int> Customer_Id { get; set; }
+    [DataMember]
+    public string Card_Number { get; set; }
+    [DataMember]
+    public Nullable<System.DateTime> Valid_till { get; set; }
+    [DataMember]
+    public string Card_Type { get; set; }
+    [DataMember]
+    public Nullable<decimal> Total_credit { get; set; }
+    [DataMember]
+    public Nullable<int> Card_cost { get; set; }
+    [DataMember]
+    public string Status { get; set; }
+    [DataMember]
+    public Nullable<int> ApprovedBy { get; set; }
+    [DataMember]
+    public Nullable<decimal> credit_used { get; set; }
+    
+        public virtual tbl_Admin tbl_Admin { get; set; }
+        public virtual tbl_Customer tbl_Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_EMI> tbl_EMI { get; set; }
     }

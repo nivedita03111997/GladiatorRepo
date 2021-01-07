@@ -23,7 +23,8 @@ const routes: Routes = [
   {path:'changepassword',component:ChangepasswordComponent},
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'userDetails',component:UserDetailsForAdminComponent},
-  {path:'activateUser',component:ActivateUserComponent}
+  {path:'activateUser',component:ActivateUserComponent},
+  {path:'dashboard/:customerId',component:DashboardComponent}
 ];
 
 @NgModule({
