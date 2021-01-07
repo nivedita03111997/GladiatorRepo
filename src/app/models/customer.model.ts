@@ -6,8 +6,8 @@ export class Customer{
     dob:Date;
     email:string;
     phoneNo:string;
-    username:string;
-    password:string;
+    Username:string;
+    Passwords:string;
     address:string;
     cardType:string;
     selectBank:string;
@@ -16,7 +16,7 @@ export class Customer{
     docs?:string;
     
 
-    constructor(id:number=0,name:string="",dob:Date=new Date(),email:string="",phoneNo:string="",username:string="",password:string="",
+    constructor(id:number=0,name:string="",dob:Date=new Date(),email:string="",phoneNo:string="",Username:string="",Passwords:string="",
             address:string="",cardType:string="",selectBank:string="",AccNo:string="",ifsc:string="",docs:string="")
     {
         this.id=id;
@@ -24,8 +24,8 @@ export class Customer{
         this.dob=dob;
         this.email=email;
         this.phoneNo=phoneNo;
-        this.username=username;
-        this.password=password;
+        this.Username=Username;
+        this.Passwords=Passwords;
         this.address=address;
         this.cardType=cardType;
         this.selectBank=selectBank;

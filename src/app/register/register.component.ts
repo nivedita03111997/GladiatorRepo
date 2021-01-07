@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators, FormGroup } from '@angular/forms';
-import { Customer } from '../models/customer.service';
+import { Router } from '@angular/router';
+import { Customer } from '../models/customer.model';
 import { CustomerServiceService } from '../services/customer-service.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
 customer:any;
 registerForm!: FormGroup;
 submitted=false;
-  constructor(private formBuilder:FormBuilder,private customerService:CustomerServiceService) { 
+  constructor(private router:Router,private formBuilder:FormBuilder,private customerService:CustomerServiceService) { 
     this.customer=new Customer();
   }
 
@@ -47,6 +48,7 @@ submitted=false;
     this.customerService.registerCustomerFromApi(this.customer).subscribe(c=>{
       this.customer=c;
     })
+    this.router.navigate(['login']);
 
   }
 

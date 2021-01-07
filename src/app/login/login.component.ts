@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators, FormGroup } from '@angular/forms';
-import { Customer } from '../models/customer.service';
+import { Router } from '@angular/router';
+import { Customer } from '../models/customer.model';
 import { CustomerServiceService } from '../services/customer-service.service';
 @Component({
   selector: 'app-login',
@@ -8,12 +9,13 @@ import { CustomerServiceService } from '../services/customer-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  customer:any;
+  customerId:any;
+  customerlogin:any;
   loginForm!: FormGroup;
   submitted = false;
-  constructor(private formBuilder:FormBuilder,private customerService:CustomerServiceService) {
-    this.customer = new Customer();
+  errMsg?:any;
+  constructor(private router:Router,private formBuilder:FormBuilder,private customerService:CustomerServiceService) {
+    this.customerlogin=new Customer();
    }
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -24,7 +26,16 @@ export class LoginComponent implements OnInit {
 
   get f() { return this.loginForm.controls; }
 
+
   loginCheck(){
     this.submitted = true;
+    this.customerService.loginCHeckFromApi(this.customerlogin).subscribe(
+      c=>{ this.customerId=c;console.log(this.customerId),
+        (this.customerId!=null)? this.router.navigate(['dashboard']):this.router.navigate(['registerCustomer']),
+        this.errMsg=undefined},
+      err=>{this.errMsg=err.error.Message}
+     );
+    
+    
   }
 }

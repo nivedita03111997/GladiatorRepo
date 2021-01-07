@@ -4,7 +4,7 @@
 <div class="loginfeilds">
    <form [formGroup]="loginForm" (ngSubmit)="loginCheck()">
     <label>USERNAME </label>
-    <input type="text"  formControlName="username" [(ngModel)]="customer.Username">
+    <input type="text"  formControlName="username" [(ngModel)]="customerlogin.Username">
     <div id="err" *ngIf="submitted && f.username.errors">
         <div *ngIf="f.username.errors.required">Name is required</div>
     </div>
@@ -13,12 +13,15 @@
     <br>
 
     <label>PASSWORD </label>
-    <input type="text"  formControlName="password" [(ngModel)]="customer.Password">
+    <input type="text"  formControlName="password" [(ngModel)]="customerlogin.Passwords">
     <div id="err" *ngIf="submitted && f.password.errors">
         <div *ngIf="f.password.errors.required">Password is required</div>
     </div>
 
     <br>
+    <div *ngIf="errMsg">
+        {{errMsg}}
+    </div>
     <br>
 
     <button>LOG IN</button><p>    </p>

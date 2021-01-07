@@ -17,11 +17,11 @@
     <Property Name="Card_Number" Type="varchar" MaxLength="12" />
     <Property Name="Valid_till" Type="varchar" MaxLength="10" />
     <Property Name="Card_Type" Type="varchar" MaxLength="10" />
-    <Property Name="Total_credit" Type="float" />
+    <Property Name="Total_credit" Type="decimal" Precision="18" Scale="0" />
     <Property Name="Card_cost" Type="int" />
-    <Property Name="Status" Type="varchar" MaxLength="10" />
+    <Property Name="Status" Type="varchar" MaxLength="15" />
     <Property Name="ApprovedBy" Type="int" />
-    <Property Name="credit_used" Type="float" />
+    <Property Name="credit_used" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="tbl_Customer">
     <Key>
@@ -36,7 +36,7 @@
     <Property Name="Passwords" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="Address" Type="varchar" MaxLength="40" />
     <Property Name="Card_Type" Type="varchar" MaxLength="10" />
-    <Property Name="Select_Bank" Type="varchar" MaxLength="10" />
+    <Property Name="Select_Bank" Type="varchar" MaxLength="40" />
     <Property Name="Saving_Account_No" Type="varchar" MaxLength="20" />
     <Property Name="IFSC_Code" Type="varchar" MaxLength="20" />
     <Property Name="Documents" Type="varbinary(max)" />

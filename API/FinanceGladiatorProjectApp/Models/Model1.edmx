@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbproject_NEWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbproject_NEWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tbl_Admin">
           <Key>
             <PropertyRef Name="Admin_Id" />
@@ -22,11 +22,11 @@
           <Property Name="Card_Number" Type="varchar" MaxLength="12" />
           <Property Name="Valid_till" Type="varchar" MaxLength="10" />
           <Property Name="Card_Type" Type="varchar" MaxLength="10" />
-          <Property Name="Total_credit" Type="float" />
+          <Property Name="Total_credit" Type="decimal" Precision="18" Scale="0" />
           <Property Name="Card_cost" Type="int" />
-          <Property Name="Status" Type="varchar" MaxLength="10" />
+          <Property Name="Status" Type="varchar" MaxLength="15" />
           <Property Name="ApprovedBy" Type="int" />
-          <Property Name="credit_used" Type="float" />
+          <Property Name="credit_used" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="tbl_Customer">
           <Key>
@@ -41,7 +41,7 @@
           <Property Name="Passwords" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Address" Type="varchar" MaxLength="40" />
           <Property Name="Card_Type" Type="varchar" MaxLength="10" />
-          <Property Name="Select_Bank" Type="varchar" MaxLength="10" />
+          <Property Name="Select_Bank" Type="varchar" MaxLength="40" />
           <Property Name="Saving_Account_No" Type="varchar" MaxLength="20" />
           <Property Name="IFSC_Code" Type="varchar" MaxLength="20" />
           <Property Name="Documents" Type="varbinary(max)" />
@@ -201,8 +201,7 @@
             <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbproject_NEWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -224,11 +223,11 @@
           <Property Name="Card_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="Valid_till" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Card_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Total_credit" Type="Double" />
+          <Property Name="Total_credit" Type="Decimal" />
           <Property Name="Card_cost" Type="Int32" />
-          <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ApprovedBy" Type="Int32" />
-          <Property Name="credit_used" Type="Double" />
+          <Property Name="credit_used" Type="Decimal" />
           <NavigationProperty Name="tbl_Admin" Relationship="Self.FK__tbl_Card__Approv__48CFD27E" FromRole="tbl_Card" ToRole="tbl_Admin" />
           <NavigationProperty Name="tbl_Customer" Relationship="Self.FK__tbl_Card__Custom__46E78A0C" FromRole="tbl_Card" ToRole="tbl_Customer" />
           <NavigationProperty Name="tbl_EMI" Relationship="Self.FK__tbl_EMI__Card_Id__534D60F1" FromRole="tbl_Card" ToRole="tbl_EMI" />
@@ -246,7 +245,7 @@
           <Property Name="Passwords" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="Card_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Select_Bank" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Select_Bank" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="Saving_Account_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="IFSC_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Documents" Type="Binary" MaxLength="Max" FixedLength="false" />

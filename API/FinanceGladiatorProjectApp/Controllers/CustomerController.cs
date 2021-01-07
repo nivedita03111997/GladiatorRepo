@@ -25,18 +25,26 @@ namespace FinanceGladiatorProjectApp.Controllers
         [HttpPost]
         public HttpResponseMessage CustomerLogin(tbl_Customer customer)
         {
-            //DbContextTransaction transaction = entities.Database.BeginTransaction();
             proc_LoginCheck_Result rslt = null;
+            //tbl_Customer cust = null;
             try
             {
                 rslt = entities.proc_LoginCheck(customer.Username, customer.Passwords).FirstOrDefault();
+                if (rslt != null)
+                {
+                    //cust = entities.tbl_Customer.Where(c => c.Customer_Id == rslt.Customer_id).FirstOrDefault();
+                    return Request.CreateResponse(HttpStatusCode.OK, rslt.Customer_id);
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound,"Invalid Login");
+                }
             }
             catch (Exception)
             {
-                //transaction.Rollback();
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid login");
             }
-            return Request.CreateResponse(HttpStatusCode.OK, rslt);
+            
 
         }
 

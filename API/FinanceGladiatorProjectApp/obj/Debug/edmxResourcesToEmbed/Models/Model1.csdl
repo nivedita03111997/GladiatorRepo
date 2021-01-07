@@ -18,11 +18,11 @@
     <Property Name="Card_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="Valid_till" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Card_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Total_credit" Type="Double" />
+    <Property Name="Total_credit" Type="Decimal" />
     <Property Name="Card_cost" Type="Int32" />
-    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="ApprovedBy" Type="Int32" />
-    <Property Name="credit_used" Type="Double" />
+    <Property Name="credit_used" Type="Decimal" />
     <NavigationProperty Name="tbl_Admin" Relationship="Self.FK__tbl_Card__Approv__48CFD27E" FromRole="tbl_Card" ToRole="tbl_Admin" />
     <NavigationProperty Name="tbl_Customer" Relationship="Self.FK__tbl_Card__Custom__46E78A0C" FromRole="tbl_Card" ToRole="tbl_Customer" />
     <NavigationProperty Name="tbl_EMI" Relationship="Self.FK__tbl_EMI__Card_Id__534D60F1" FromRole="tbl_Card" ToRole="tbl_EMI" />
@@ -40,7 +40,7 @@
     <Property Name="Passwords" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Address" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="Card_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Select_Bank" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Select_Bank" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="Saving_Account_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="IFSC_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Documents" Type="Binary" MaxLength="Max" FixedLength="false" />
