@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -18,11 +18,18 @@ namespace FinanceGladiatorProjectApp.Controllers
         [HttpPost]
         public HttpResponseMessage AdminLogin(tbl_Admin admin)
         {
-            proc_AdminLoginCheck_Result rslt = entities.proc_AdminLoginCheck(admin.Username, admin.Password).FirstOrDefault();
-            if (rslt != null)
-                return Request.CreateResponse(HttpStatusCode.OK, rslt);
-            else
-                return Request.CreateErrorResponse(HttpStatusCode.Found, "Invalid Login");
+      try
+      {
+        proc_AdminLoginCheck_Result rslt = entities.proc_AdminLoginCheck(admin.Username, admin.Password).FirstOrDefault();
+        if (rslt != null)
+          return Request.CreateResponse(HttpStatusCode.OK, rslt.admin_id);
+        else
+          return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Invalid Login");
+      }
+      catch (Exception)
+      {
+        return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid login");
+      }
 
         }
 

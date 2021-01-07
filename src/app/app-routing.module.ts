@@ -22,7 +22,7 @@ const routes: Routes = [
   {path:'forgotpassword',component:ForgotpasswordComponent},
   {path:'changepassword',component:ChangepasswordComponent},
   {path:'',redirectTo:'home',pathMatch:'full'},
-  {path:'userDetails',component:UserDetailsForAdminComponent},
+  {path:'userDetails/:adminId',component:UserDetailsForAdminComponent},
   {path:'activateUser',component:ActivateUserComponent},
   {path:'dashboard/:customerId',component:DashboardComponent}
 ];

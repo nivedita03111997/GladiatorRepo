@@ -4,21 +4,24 @@
 <div class="loginfeilds">
     <form [formGroup]="adminForm" (ngSubmit)="adminCheck()">
         <label>USERNAME </label>
-        <input type="text"  formControlName="username">
+        <input type="text"  formControlName="username" [(ngModel)]="adminLogin.username" >
         <div id="err" *ngIf="submitted && f.username.errors">
-            <div *ngIf="f.username.errors.required">Name is required</div>
+            <div *ngIf="f.username.errors?.required">Name is required</div>
         </div>
 
     <br>
     <br>
 
     <label>PASSWORD </label>
-    <input type="text"  formControlName="password">
+    <input type="text"  formControlName="password" [(ngModel)]="adminLogin.password">
     <div id="err" *ngIf="submitted && f.password.errors">
-        <div *ngIf="f.password.errors.required">Password is required</div>
+        <div *ngIf="f.password.errors?.required">Password is required</div>
     </div>
 
     <br>
+    <div id="err" *ngIf="errMsg">
+        {{errMsg}}
+    </div>
     <br>
 
     <button>LOG IN</button> 
