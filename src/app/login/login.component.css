@@ -5,6 +5,9 @@
 .loginfeilds{
     text-align: center;
 }
+#err{
+    color: red;
+}
 /* 
 button{
     margin-left: 700px;

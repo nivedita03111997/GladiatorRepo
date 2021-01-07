@@ -9,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class UserDetailsForAdminComponent implements OnInit {
 
   customers:any;
-  constructor(private CustomerService:CustomerServiceService) { }
-
-  getCustomers(){
+  constructor(private CustomerService:CustomerServiceService) { 
     this.CustomerService.getCustomersFromApi().subscribe(d=>{
       this.customers=d;
     })
+  }
+
+  getCustomers(){
+    
   }
 
   ngOnInit(): void {

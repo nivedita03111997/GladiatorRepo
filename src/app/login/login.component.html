@@ -13,13 +13,13 @@
     <br>
 
     <label>PASSWORD </label>
-    <input type="text"  formControlName="password" [(ngModel)]="customerlogin.Passwords">
+    <input type="password"  formControlName="password" [(ngModel)]="customerlogin.Passwords">
     <div id="err" *ngIf="submitted && f.password.errors">
         <div *ngIf="f.password.errors.required">Password is required</div>
     </div>
 
     <br>
-    <div *ngIf="errMsg">
+    <div id="err" *ngIf="errMsg">
         {{errMsg}}
     </div>
     <br>

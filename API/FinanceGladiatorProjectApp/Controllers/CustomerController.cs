@@ -15,7 +15,22 @@ namespace FinanceGladiatorProjectApp.Controllers
     {
         dbproject_NEWEntities1 entities = new dbproject_NEWEntities1();
 
-        public IQueryable<tbl_Customer> GetCustomers()
+    [HttpGet]
+    public HttpResponseMessage Get(int id)//customerId
+    {
+      tbl_Customer customer = entities.tbl_Customer.Where(c => c.Customer_Id == id).FirstOrDefault();
+      if (customer != null)
+      {
+        return Request.CreateResponse(HttpStatusCode.OK, customer);
+      }
+      else
+      {
+        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Customer does not exist..");
+      }
+
+    }
+
+    public IQueryable<tbl_Customer> GetCustomers()
         {
             return (entities.tbl_Customer);
         }
@@ -37,7 +52,7 @@ namespace FinanceGladiatorProjectApp.Controllers
                 }
                 else
                 {
-                    return Request.CreateResponse(HttpStatusCode.NotFound,"Invalid Login");
+                    return Request.CreateErrorResponse(HttpStatusCode.NotFound,"Invalid Login");
                 }
             }
             catch (Exception)
