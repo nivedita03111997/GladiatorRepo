@@ -1,11 +1,12 @@
 <!-- <p>user-details-for-admin works!</p> -->
-<table border="1" align="center" width=100%>
+<table border="1" align="center" width=97%>
     <p id="p01">ADMIN PAGE<p>
     <br><br><br><br>
-    <table border="1" align="center" width=80%>
+    <button class="btn btn-success" (click)="getCustomers()">User Details</button>
+    <table class="table table-striped" border="1">
     <thead>
         <tr>
-            <td colspan="12" align="center">USER DETAILS DATABASE</td>
+            <td colspan="13" align="center">USER DETAILS DATABASE</td>
         </tr>
         <tr>    
             <th>NAME</th>
@@ -20,22 +21,26 @@
             <th>IFSC CODE</th>
             <th>EDIT</th>
             <th>DELETE</th>
+            <th>ACTIVATION</th>
         </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr *ngFor="let cust of customers">
+                <td>{{cust.Customer_Name}}</td>
+                <td>{{cust.Username}}</td>
+                <td>{{cust.Date_of_Birth}}</td>
+                <td>{{cust.Email}}</td>
+                <td>{{cust.Phone_No}}</td>
+                <td>{{cust.Address}}</td>
+                <td>{{cust.Card_Type}}</td>
+                <td>{{cust.Select_Bank}}</td>
+                <td>{{cust.Saving_Account_No}}</td>
+                <td>{{cust.IFSC_Code}}</td>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>
+                    <a [routerLink]="['/activateUser']">activate</a>
+                </td>
             </tr>
         </tbody>
     </table>

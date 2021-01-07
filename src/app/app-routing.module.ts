@@ -1,11 +1,16 @@
+import { ActivateUserComponent } from './activate-user/activate-user.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
 import { ProductlistComponent } from './productlist/productlist.component';
-import { RegisterComponent } from './register/register.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { UserDetailsForAdminComponent } from './user-details-for-admin/user-details-for-admin.component';
+
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -14,7 +19,11 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'adminLogin',component:AdminloginComponent},
   {path:'productList',component:ProductlistComponent},
-  {path:'',redirectTo:'home',pathMatch:'full'}
+  {path:'forgotpassword',component:ForgotpasswordComponent},
+  {path:'changepassword',component:ChangepasswordComponent},
+  {path:'',redirectTo:'home',pathMatch:'full'},
+  {path:'userDetails',component:UserDetailsForAdminComponent},
+  {path:'activateUser',component:ActivateUserComponent}
 ];
 
 @NgModule({

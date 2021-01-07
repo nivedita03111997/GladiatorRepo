@@ -2,21 +2,35 @@
     <h1>LOGIN</h1>
 </div>
 <div class="loginfeilds">
+   <form [formGroup]="loginForm" (ngSubmit)="loginCheck()">
     <label>USERNAME </label>
-    <input type="text" placeholder="Enter Username">
+    <input type="text"  formControlName="username" [(ngModel)]="customer.Username">
+    <div id="err" *ngIf="submitted && f.username.errors">
+        <div *ngIf="f.username.errors.required">Name is required</div>
+    </div>
+
     <br>
     <br>
+
     <label>PASSWORD </label>
-    <input type="text" placeholder="Enter Password">
-    <br><br>
-</div>
-<div>
-    <button (click)="login()">LOG IN</button> <a href="#" id="forgot">Forgot Password?</a>
+    <input type="text"  formControlName="password" [(ngModel)]="customer.Password">
+    <div id="err" *ngIf="submitted && f.password.errors">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+    </div>
+
+    <br>
+    <br>
+
+    <button>LOG IN</button><p>    </p>
+    <a [routerLink]="['/forgotpassword']" id="forgot">Forgot Password?</a>
+   </form>
 </div>
 <br>
 <div class="register">
     New User ? <a href="#">Register here</a>
 </div>
+
+
     
 
 
