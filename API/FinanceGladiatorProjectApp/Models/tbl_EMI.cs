@@ -11,7 +11,9 @@ namespace FinanceGladiatorProjectApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+  using System.Runtime.Serialization;
+
+  [DataContract]
     public partial class tbl_EMI
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,17 +21,25 @@ namespace FinanceGladiatorProjectApp.Models
         {
             this.tbl_Transaction = new HashSet<tbl_Transaction>();
         }
-    
+
+        [DataMember]
         public int EMI_Id { get; set; }
+    [DataMember]
         public Nullable<int> Tenure_period { get; set; }
-        public Nullable<decimal> Product_cost { get; set; }
-        public Nullable<decimal> Total_Amount_Paid { get; set; }
-        public Nullable<int> Card_Id { get; set; }
-        public Nullable<int> Product_Id { get; set; }
-        public Nullable<System.DateTime> EMI_Due_Date { get; set; }
-        public Nullable<System.DateTime> EMI_Start_Date { get; set; }
-    
-        public virtual tbl_Card tbl_Card { get; set; }
+    [DataMember]
+    public Nullable<decimal> Product_cost { get; set; }
+    [DataMember]
+    public Nullable<decimal> Total_Amount_Paid { get; set; }
+    [DataMember]
+    public Nullable<int> Card_Id { get; set; }
+    [DataMember]
+    public Nullable<int> Product_Id { get; set; }
+    [DataMember]
+    public Nullable<System.DateTime> EMI_Due_Date { get; set; }
+    [DataMember]
+    public Nullable<System.DateTime> EMI_Start_Date { get; set; }
+
+    public virtual tbl_Card tbl_Card { get; set; }
         public virtual tbl_Product tbl_Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Transaction> tbl_Transaction { get; set; }
