@@ -10,42 +10,16 @@
 <div class="container">
 <form class="searchbar"> <input type="search" placeholder="Search here" name="search" class="searchbar-input" onkeyup="buttonUp();" required> <input type="submit" class="searchbar-submit" value="GO"> <span class="searchbar-icon"><i class="fa fa-search" aria-hidden="true"></i></span> </form>
 </div>
-<table>
-<div class="down">
-  <tr>
-      <td>
-    <div>
-      <img class="p1" src='assets/image1.jpg'>
-      <p>PRODUCT NAME:Iphone</p>
-      <p>PRODUCT DETAILS:iPhone from Apple,colour SpaceGray,128gb space.</p>
-      <p>COST:58,999</p>
-      <button href="#" class="btn btn-primary">BUY NOW</button>
-    </div>
-     </td>
-  </tr>
 
-  <tr>
-    <td>
-      <div>
-          <img class="p2" src='assets/image2.jpg'>
-          <p>PRODUCT NAME:Mac BOOK</p>
-          <p>PRODUCT DETAILS:MAc Book from Apple, colour black,8gb RAM.</p>
-          <p>COST:1,58,999</p>
-          <button href="#" class="btn btn-primary">BUY NOW</button>
-      </div>
-    </td>
-  </tr>
 
-  <tr>
-   <td>
-      <div>
-      <img class="p3" src='assets/image3.jpg'>
-      <p>PRODUCT NAME:Air Pods Pro</p>
-      <p>PRODUCT DETAILS:Air Pods Book from Apple,clour white.</p>
-      <p>COST:39,999</p>
-      <button href="#" class="btn btn-primary">BUY NOW</button>
-      </div>
-   </td>
-  </tr>
-</div>
+<table border="1">
+<tr *ngFor="let p of Products">
+  <ul>
+      <li><img class="p1" src='{{p.Product_Image}}'></li>
+      <li>PRODUCT NAME:{{p.Product_Name}}</li>
+      <li>PRODUCT DETAILS:{{p.Product_Description}}</li>
+      <li>COST:{{p.Product_Cost}}</li>
+      <li><button [routerLink]="['productDetails/'+p.Product_Id]" class="btn btn-primary">BUY NOW</button></li>
+  </ul>
+</tr>
 </table>

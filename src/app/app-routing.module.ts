@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductlistComponent } from './productlist/productlist.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { UserDetailsForAdminComponent } from './user-details-for-admin/user-details-for-admin.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
 
 
 const routes: Routes = [
@@ -18,13 +19,14 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'home',component:HomeComponent},
   {path:'adminLogin',component:AdminloginComponent},
-  {path:'productList',component:ProductlistComponent},
+  {path:'productlist',component:ProductlistComponent},
   {path:'forgotpassword',component:ForgotpasswordComponent},
   {path:'changepassword',component:ChangepasswordComponent},
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'userDetails/:adminId',component:UserDetailsForAdminComponent},
   {path:'activateUser',component:ActivateUserComponent},
-  {path:'dashboard/:customerId',component:DashboardComponent}
+  {path:'dashboard/:customerId',component:DashboardComponent},
+  {path:'productlist/productDetails/:productId',component:ProductdetailsComponent}
 ];
 
 @NgModule({

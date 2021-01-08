@@ -13,7 +13,7 @@ namespace FinanceGladiatorProjectApp.Models
     using System.Collections.Generic;
   using System.Runtime.Serialization;
 
-    [DataContract]
+  [DataContract]
     public partial class tbl_Card
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

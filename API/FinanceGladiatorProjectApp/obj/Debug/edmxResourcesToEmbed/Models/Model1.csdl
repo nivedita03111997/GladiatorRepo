@@ -16,7 +16,7 @@
     <Property Name="Card_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Customer_Id" Type="Int32" />
     <Property Name="Card_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-    <Property Name="Valid_till" Type="DateTime" />
+    <Property Name="Valid_till" Type="DateTime" Precision="0" />
     <Property Name="Card_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Total_credit" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="Card_cost" Type="Int32" />
@@ -77,7 +77,7 @@
     </Key>
     <Property Name="Product_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Product_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Product_Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Product_Image" Type="String" />
     <Property Name="Product_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Product_Cost" Type="Int32" />
     <Property Name="Processing_fees" Type="Decimal" Precision="19" Scale="4" />

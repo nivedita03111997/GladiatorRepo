@@ -23,7 +23,7 @@ namespace FinanceGladiatorProjectApp.Models
     
         public int Product_Id { get; set; }
         public string Product_Name { get; set; }
-        public byte[] Product_Image { get; set; }
+        public string Product_Image { get; set; }
         public string Product_Description { get; set; }
         public Nullable<int> Product_Cost { get; set; }
         public Nullable<decimal> Processing_fees { get; set; }

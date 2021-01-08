@@ -68,7 +68,7 @@
     </Key>
     <Property Name="Product_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Product_Name" Type="varchar" MaxLength="10" />
-    <Property Name="Product_Image" Type="varbinary(max)" />
+    <Property Name="Product_Image" Type="varchar" MaxLength="50" />
     <Property Name="Product_Description" Type="varchar" MaxLength="50" />
     <Property Name="Product_Cost" Type="int" />
     <Property Name="Processing_fees" Type="money" />
