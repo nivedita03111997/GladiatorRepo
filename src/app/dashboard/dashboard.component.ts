@@ -16,9 +16,11 @@ customer:any;
   constructor(private router:Router,private active:ActivatedRoute,private customerService:CustomerServiceService) { 
     this.active.params.subscribe(param=>this.customerId=param["customerId"]);
     this.customerService.getCardByCustomerId(this.customerId).subscribe(c=>
-      {this.card=c})
+      {this.card=c
+      console.log(this.card)})
     this.customerService.getCustomerById(this.customerId).subscribe(d=>
-      {this.customer=d})
+      {this.customer=d
+      console.log(this.customer)})
   }
 
   ngOnInit(): void {

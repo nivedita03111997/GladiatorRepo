@@ -1,29 +1,35 @@
-<div class="header">
-    <h1>ADMIN LOGIN</h1>
-</div>
-<div class="loginfeilds">
-    <form [formGroup]="adminForm" (ngSubmit)="adminCheck()">
-        <label>USERNAME </label>
-        <input type="text"  formControlName="username" [(ngModel)]="adminLogin.username" >
-        <div id="err" *ngIf="submitted && f.username.errors">
-            <div *ngIf="f.username.errors?.required">Name is required</div>
+<body background="assets/bg1.jpg" >  
+    
+    
+
+    <div class="loginfeilds" role="form">
+        <form [formGroup]="adminForm" (ngSubmit)="adminCheck()">
+            <h4 style="text-align: center;">ADMIN LOGIN</h4>
+    
+            <div class="form-group">
+            <label>USERNAME </label>
+            <input type="text"  formControlName="username" [(ngModel)]="adminLogin.username" >
+            <div id="err" *ngIf="submitted && f.username.errors">
+                <div *ngIf="f.username.errors?.required">Name is required</div>
+            </div>
+    
+        <br>
+        <br>
+    
+        <label>PASSWORD </label>
+        <input type="password"  formControlName="password" [(ngModel)]="adminLogin.password">
+        <div id="err" *ngIf="submitted && f.password.errors">
+            <div *ngIf="f.password.errors?.required">Password is required</div>
         </div>
-
-    <br>
-    <br>
-
-    <label>PASSWORD </label>
-    <input type="text"  formControlName="password" [(ngModel)]="adminLogin.password">
-    <div id="err" *ngIf="submitted && f.password.errors">
-        <div *ngIf="f.password.errors?.required">Password is required</div>
+    
+        <br>
+        <div id="err" *ngIf="errMsg">
+            {{errMsg}}
+        </div>
+        <br>
+    
+        <button style="background: darkcyan; color: white;">LOG IN</button> 
     </div>
-
-    <br>
-    <div id="err" *ngIf="errMsg">
-        {{errMsg}}
-    </div>
-    <br>
-
-    <button>LOG IN</button> 
     </form>
-</div>
+    </div>
+    </body>

@@ -11,6 +11,7 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { UserDetailsForAdminComponent } from './user-details-for-admin/user-details-for-admin.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { FaqComponent } from './faq/faq.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:'userDetails/:adminId',component:UserDetailsForAdminComponent},
   {path:'activateUser',component:ActivateUserComponent},
   {path:'dashboard/:customerId',component:DashboardComponent},
-  {path:'productlist/productDetails/:productId',component:ProductdetailsComponent}
+  {path:'productlist/productDetails/:productId',component:ProductdetailsComponent},
+  {path:'faq',component:FaqComponent}
 ];
 
 @NgModule({

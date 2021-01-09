@@ -1,40 +1,44 @@
-<div id="header">DASHBOARD</div>
-
-<div id="box">
-    <span style="float: right;color:red;">LFI</span><br>
-    <span>Card Number:{{card.Card_Number}}</span><br>
-    <span>Name:{{customer.Customer_Name}}</span><br>
-    <span>VAlid till:{{card.Valid_till}}</span><br>
-    <span>CARD TYPE:{{card.Card_Type}}</span><br>
-</div>
-<div id="gr">
-    <span>{{card.Status}}</span>
-</div>
-<br><br>
-<span>TOTAL CREDIT:{{card.Total_credit}}</span><br>
-<span>CREDIT USED:{{card.Credit_Used}}</span><br>
-<span>REMAINING CREDIT:{{card.Total_credit}}-{{card.Credit_Used}}</span>
-<br><br>
-<div id="header">PRODUCTS PURCHASED</div>
-<span> NAME:</span>       <span>AMOUNT:</span>
-<br>
-<span>PAID:</span>
-<br>
-<span>BALANCE:</span>
-<br><br>
-<span>RECENT TRANSACTIONS</span>
-<br><br>
-<table class="tran">
-    <tr>
-        <td>PRODUCT</td>
-        <td>DATE</td>
-        <td>AMOUNT PAID</td>
-    </tr>
-    <tr>
-        <td>abc</td>
-        <td>abc</td>
-        <td>abc</td>
-    </tr>
-</table>
-
-
+<body background="assets/bg1.jpg" >  
+    
+    <div id="header">DASHBOARD</div>
+    
+    <div id="box" style="background-color: white;color: black;">
+        <span style="float: right;color:red;">LFI</span><br>
+        <span>Card Number:{{card.Card_Number}}</span><br>
+        <span>Name:{{customer.Customer_Name}}</span><br>
+        <span>VAlid till:{{card.Valid_till}}</span><br>
+        <span>CARD TYPE:{{card.Card_Type}}</span><br>
+    </div>
+    <div id="gr" style="color: white;">
+        <span>{{card.Status}}</span>
+    </div>
+    <br>
+    
+    <span>TOTAL CREDIT:{{card.Total_credit}}</span><br>
+    <span>CREDIT USED:{{card.Credit_Used}}</span><br>
+    <span>REMAINING CREDIT:{{card.Total_credit}}-{{card.Credit_Used}}</span>
+    <br><br>
+    <div id="header"><b>PRODUCTS PURCHASED</b></div>
+    <span> NAME:</span>   <br>    <span>AMOUNT:</span>
+    <br>
+    <span>PAID:</span>
+    <br>
+    <span>BALANCE:</span>
+    <br><br><br>
+    <div style="text-align: center;">
+    <span ><b>RECENT TRANSACTIONS</b></span>
+    <br><br>
+    <table class="tran">
+        <tr>
+            <td>PRODUCT</td>
+            <td>DATE</td>
+            <td>AMOUNT PAID</td>
+        </tr>
+        <tr>
+            <td>abc</td>
+            <td>abc</td>
+            <td>abc</td>
+        </tr>
+    </table>
+    </div>
+    </body>

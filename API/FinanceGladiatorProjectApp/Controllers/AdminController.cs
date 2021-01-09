@@ -13,7 +13,7 @@ namespace FinanceGladiatorProjectApp.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class AdminController : ApiController
     {
-        dbproject_NEWEntities1 entities = new dbproject_NEWEntities1();
+        dbproject_NEWEntities2 entities = new dbproject_NEWEntities2();
         [Route("api/admin/Login")]
         [HttpPost]
         public HttpResponseMessage AdminLogin(tbl_Admin admin)

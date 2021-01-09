@@ -18,7 +18,6 @@ namespace FinanceGladiatorProjectApp.Models
         public tbl_Product()
         {
             this.tbl_EMI = new HashSet<tbl_EMI>();
-            this.tbl_FAQ = new HashSet<tbl_FAQ>();
         }
     
         public int Product_Id { get; set; }
@@ -30,7 +29,5 @@ namespace FinanceGladiatorProjectApp.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_EMI> tbl_EMI { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_FAQ> tbl_FAQ { get; set; }
     }
 }

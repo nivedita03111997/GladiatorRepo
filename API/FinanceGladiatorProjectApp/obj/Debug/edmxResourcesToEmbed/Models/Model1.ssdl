@@ -40,6 +40,7 @@
     <Property Name="Saving_Account_No" Type="varchar" MaxLength="20" />
     <Property Name="IFSC_Code" Type="varchar" MaxLength="20" />
     <Property Name="Documents" Type="varbinary(max)" />
+    <Property Name="Status" Type="varchar" MaxLength="15" />
   </EntityType>
   <EntityType Name="tbl_EMI">
     <Key>
@@ -59,8 +60,8 @@
       <PropertyRef Name="Faq_Id" />
     </Key>
     <Property Name="Faq_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Product_Id" Type="int" />
-    <Property Name="Questions" Type="varchar" MaxLength="30" />
+    <Property Name="Questions" Type="varchar" MaxLength="200" />
+    <Property Name="Answers" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="tbl_Product">
     <Key>
@@ -131,18 +132,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tbl_FAQ__Product__5AEE82B9">
-    <End Role="tbl_Product" Type="Self.tbl_Product" Multiplicity="0..1" />
-    <End Role="tbl_FAQ" Type="Self.tbl_FAQ" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tbl_Product">
-        <PropertyRef Name="Product_Id" />
-      </Principal>
-      <Dependent Role="tbl_FAQ">
-        <PropertyRef Name="Product_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__tbl_Trans__EMI_I__571DF1D5">
     <End Role="tbl_EMI" Type="Self.tbl_EMI" Multiplicity="0..1" />
     <End Role="tbl_Transaction" Type="Self.tbl_Transaction" Multiplicity="*" />
@@ -155,6 +144,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="proc_ActivateCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_ActivatedCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
   <Function Name="proc_AdminLoginCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="un" Type="varchar" Mode="In" />
     <Parameter Name="pass" Type="varchar" Mode="In" />
@@ -186,10 +181,6 @@
     <AssociationSet Name="FK__tbl_EMI__Product__5441852A" Association="Self.FK__tbl_EMI__Product__5441852A">
       <End Role="tbl_Product" EntitySet="tbl_Product" />
       <End Role="tbl_EMI" EntitySet="tbl_EMI" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tbl_FAQ__Product__5AEE82B9" Association="Self.FK__tbl_FAQ__Product__5AEE82B9">
-      <End Role="tbl_Product" EntitySet="tbl_Product" />
-      <End Role="tbl_FAQ" EntitySet="tbl_FAQ" />
     </AssociationSet>
     <AssociationSet Name="FK__tbl_Trans__EMI_I__571DF1D5" Association="Self.FK__tbl_Trans__EMI_I__571DF1D5">
       <End Role="tbl_EMI" EntitySet="tbl_EMI" />

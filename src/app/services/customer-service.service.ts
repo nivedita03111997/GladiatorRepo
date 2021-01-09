@@ -14,8 +14,10 @@ export class CustomerServiceService {
    public registerCustomerFromApi(customer:Customer){
      return this.httpClient.post("http://localhost:65456/api/customer/register",customer);
    }
+   
    public getCustomersFromApi(){
      return this.httpClient.get("http://localhost:65456/api/customer");
+
    }
    public loginCHeckFromApi(customer:Customer){​​
     return this.httpClient.post("http://localhost:65456/api/customer/Login",customer);

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="dbproject_NEWModelStoreContainer" CdmEntityContainer="dbproject_NEWEntities1">
+  <EntityContainerMapping StorageEntityContainer="dbproject_NEWModelStoreContainer" CdmEntityContainer="dbproject_NEWEntities2">
     <EntitySetMapping Name="tbl_Admin">
       <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_Admin">
         <MappingFragment StoreEntitySet="tbl_Admin">
@@ -42,6 +42,7 @@
           <ScalarProperty Name="Saving_Account_No" ColumnName="Saving_Account_No" />
           <ScalarProperty Name="IFSC_Code" ColumnName="IFSC_Code" />
           <ScalarProperty Name="Documents" ColumnName="Documents" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -63,8 +64,8 @@
       <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_FAQ">
         <MappingFragment StoreEntitySet="tbl_FAQ">
           <ScalarProperty Name="Faq_Id" ColumnName="Faq_Id" />
-          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
           <ScalarProperty Name="Questions" ColumnName="Questions" />
+          <ScalarProperty Name="Answers" ColumnName="Answers" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -91,6 +92,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_ActivateCustomer" FunctionName="dbproject_NEWModel.Store.proc_ActivateCustomer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_ActivateCustomer_Result">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_ActivatedCustomer" FunctionName="dbproject_NEWModel.Store.proc_ActivatedCustomer" />
     <FunctionImportMapping FunctionImportName="proc_AdminLoginCheck" FunctionName="dbproject_NEWModel.Store.proc_AdminLoginCheck">
       <ResultMapping>
         <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_AdminLoginCheck_Result">

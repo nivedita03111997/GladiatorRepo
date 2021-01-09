@@ -1,26 +1,49 @@
-.header{
-    text-align: center;
-}
-
-.loginfeilds{
-    text-align: center;
-}
 #err{
     color: red;
 }
-/* 
-button{
-    margin-left: 700px;
-}
-
 #forgot{
-    margin-left: 900px;
-} */
+    text-align: center;
+} 
 
-.register{
-    margin-left: 700px;
-}
 
 #err{
     color:red;
 }
+
+
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    background-color: #f2f2f2;
+    margin-top: 35px;
+    
+ }
+ 
+ *[role="form"] h2 { 
+
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 6%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+ }
+ 
+ label{
+     font-weight: bold;
+     color: black;
+     padding: 20px ;
+ }
+ form{
+     
+     width: 40%;
+     height: 450px;
+ }
+ body{
+     
+     background-size: 100%;
+ }

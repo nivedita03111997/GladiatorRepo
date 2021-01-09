@@ -14,10 +14,10 @@ export class Customer{
     AccNo:string;
     ifsc:string;
     docs?:string;
-    Status:string;
-
+    status:string;
     constructor(id:number=0,name:string="",dob:Date=new Date(),email:string="",phoneNo:string="",Username:string="",Passwords:string="",
-            address:string="",cardType:string="",selectBank:string="",AccNo:string="",ifsc:string="",docs:string="",Status:string="")
+            address:string="",cardType:string="",selectBank:string="",AccNo:string="",ifsc:string="",docs:string="",status:string="")
+
     {
         this.id=id;
         this.name=name;
@@ -32,7 +32,7 @@ export class Customer{
         this.AccNo=AccNo;
         this.ifsc=ifsc;
         this.docs=docs;
-        this.Status=Status;
+        this.status = status;
     }
     
 }

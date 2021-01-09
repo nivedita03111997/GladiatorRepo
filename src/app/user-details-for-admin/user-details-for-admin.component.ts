@@ -1,5 +1,8 @@
 import { CustomerServiceService } from './../services/customer-service.service';
 import { Component, OnInit } from '@angular/core';
+import { Customer } from '../models/customer.model';
+import { AdminService } from '../services/admin.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-details-for-admin',
@@ -8,18 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsForAdminComponent implements OnInit {
 
+  adminid:any;
   customers:any;
-  constructor(private CustomerService:CustomerServiceService) { 
+  card:any;
+  status :any;
+  constructor(private router:Router,private CustomerService:CustomerServiceService,private adminService:AdminService,private active:ActivatedRoute) { 
+    this.active.params.subscribe(param => this.adminid = param["adminId"]);
     this.CustomerService.getCustomersFromApi().subscribe(d=>{
       this.customers=d;
     })
   }
 
-  getCustomers(){
-    
-  }
-
+  statusUpdate(id:number=this.adminid,customer:Customer){
+      this.adminService.adminActivatefromApi(id,customer).subscribe(c=>{
+        this.card = c;
+       
+      })
+      location.reload();
+    }
+     
+      
+  
   ngOnInit(): void {
   }
+  
 
 }

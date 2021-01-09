@@ -16,6 +16,9 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { CustomerServiceService } from './services/customer-service.service';
+import { AdminService } from './services/admin.service';
+import { FaqComponent } from './faq/faq.component';
 
 
 
@@ -37,7 +40,8 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
     ForgotpasswordComponent,
     RegisterComponent,
     HomeComponent,
-    ProductdetailsComponent
+    ProductdetailsComponent,
+    FaqComponent
 
  
   ],
@@ -49,7 +53,7 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CustomerServiceService,AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

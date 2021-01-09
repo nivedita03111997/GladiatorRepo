@@ -10,12 +10,10 @@
 namespace FinanceGladiatorProjectApp.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class tbl_FAQ
+    public partial class proc_ActivateCustomer_Result
     {
-        public int Faq_Id { get; set; }
-        public string Questions { get; set; }
-        public string Answers { get; set; }
+        public string Status { get; set; }
+        public string Username { get; set; }
     }
 }

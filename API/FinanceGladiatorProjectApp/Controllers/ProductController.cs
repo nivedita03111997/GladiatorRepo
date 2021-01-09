@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,7 +12,7 @@ namespace FinanceGladiatorProjectApp.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class ProductController : ApiController
     {
-        dbproject_NEWEntities1 entities = new dbproject_NEWEntities1();
+        dbproject_NEWEntities2 entities = new dbproject_NEWEntities2();
 
         public IEnumerable<tbl_Product> GetProducts()
         {

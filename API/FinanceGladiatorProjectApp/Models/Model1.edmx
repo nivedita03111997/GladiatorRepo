@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="dbproject_NEWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="dbproject_NEWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tbl_Admin">
           <Key>
             <PropertyRef Name="Admin_Id" />
@@ -45,6 +45,7 @@
           <Property Name="Saving_Account_No" Type="varchar" MaxLength="20" />
           <Property Name="IFSC_Code" Type="varchar" MaxLength="20" />
           <Property Name="Documents" Type="varbinary(max)" />
+          <Property Name="Status" Type="varchar" MaxLength="15" />
         </EntityType>
         <EntityType Name="tbl_EMI">
           <Key>
@@ -64,8 +65,8 @@
             <PropertyRef Name="Faq_Id" />
           </Key>
           <Property Name="Faq_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Product_Id" Type="int" />
-          <Property Name="Questions" Type="varchar" MaxLength="30" />
+          <Property Name="Questions" Type="varchar" MaxLength="200" />
+          <Property Name="Answers" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="tbl_Product">
           <Key>
@@ -136,18 +137,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbl_FAQ__Product__5AEE82B9">
-          <End Role="tbl_Product" Type="Self.tbl_Product" Multiplicity="0..1" />
-          <End Role="tbl_FAQ" Type="Self.tbl_FAQ" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbl_Product">
-              <PropertyRef Name="Product_Id" />
-            </Principal>
-            <Dependent Role="tbl_FAQ">
-              <PropertyRef Name="Product_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__tbl_Trans__EMI_I__571DF1D5">
           <End Role="tbl_EMI" Type="Self.tbl_EMI" Multiplicity="0..1" />
           <End Role="tbl_Transaction" Type="Self.tbl_Transaction" Multiplicity="*" />
@@ -160,6 +149,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="proc_ActivateCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="proc_ActivatedCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
         <Function Name="proc_AdminLoginCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="un" Type="varchar" Mode="In" />
           <Parameter Name="pass" Type="varchar" Mode="In" />
@@ -192,16 +187,13 @@
             <End Role="tbl_Product" EntitySet="tbl_Product" />
             <End Role="tbl_EMI" EntitySet="tbl_EMI" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbl_FAQ__Product__5AEE82B9" Association="Self.FK__tbl_FAQ__Product__5AEE82B9">
-            <End Role="tbl_Product" EntitySet="tbl_Product" />
-            <End Role="tbl_FAQ" EntitySet="tbl_FAQ" />
-          </AssociationSet>
           <AssociationSet Name="FK__tbl_Trans__EMI_I__571DF1D5" Association="Self.FK__tbl_Trans__EMI_I__571DF1D5">
             <End Role="tbl_EMI" EntitySet="tbl_EMI" />
             <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbproject_NEWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -249,6 +241,7 @@
           <Property Name="Saving_Account_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="IFSC_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Documents" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tbl_Card" Relationship="Self.FK__tbl_Card__Custom__46E78A0C" FromRole="tbl_Customer" ToRole="tbl_Card" />
         </EntityType>
         <EntityType Name="tbl_EMI">
@@ -272,9 +265,8 @@
             <PropertyRef Name="Faq_Id" />
           </Key>
           <Property Name="Faq_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Product_Id" Type="Int32" />
-          <Property Name="Questions" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tbl_Product" Relationship="Self.FK__tbl_FAQ__Product__5AEE82B9" FromRole="tbl_FAQ" ToRole="tbl_Product" />
+          <Property Name="Questions" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Answers" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tbl_Product">
           <Key>
@@ -282,12 +274,11 @@
           </Key>
           <Property Name="Product_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Product_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="Product_Image" Type="String" />
+          <Property Name="Product_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Product_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Product_Cost" Type="Int32" />
           <Property Name="Processing_fees" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="tbl_EMI" Relationship="Self.FK__tbl_EMI__Product__5441852A" FromRole="tbl_Product" ToRole="tbl_EMI" />
-          <NavigationProperty Name="tbl_FAQ" Relationship="Self.FK__tbl_FAQ__Product__5AEE82B9" FromRole="tbl_Product" ToRole="tbl_FAQ" />
         </EntityType>
         <EntityType Name="tbl_Transaction">
           <Key>
@@ -360,19 +351,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbl_FAQ__Product__5AEE82B9">
-          <End Role="tbl_Product" Type="Self.tbl_Product" Multiplicity="0..1" />
-          <End Role="tbl_FAQ" Type="Self.tbl_FAQ" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tbl_Product">
-              <PropertyRef Name="Product_Id" />
-            </Principal>
-            <Dependent Role="tbl_FAQ">
-              <PropertyRef Name="Product_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="dbproject_NEWEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="dbproject_NEWEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbl_Admin" EntityType="Self.tbl_Admin" />
           <EntitySet Name="tbl_Card" EntityType="Self.tbl_Card" />
           <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" />
@@ -400,10 +379,12 @@
             <End Role="tbl_EMI" EntitySet="tbl_EMI" />
             <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbl_FAQ__Product__5AEE82B9" Association="Self.FK__tbl_FAQ__Product__5AEE82B9">
-            <End Role="tbl_Product" EntitySet="tbl_Product" />
-            <End Role="tbl_FAQ" EntitySet="tbl_FAQ" />
-          </AssociationSet>
+          <FunctionImport Name="proc_ActivateCustomer" ReturnType="Collection(dbproject_NEWModel.proc_ActivateCustomer_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="proc_ActivatedCustomer">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="proc_AdminLoginCheck" ReturnType="Collection(dbproject_NEWModel.proc_AdminLoginCheck_Result)">
             <Parameter Name="un" Mode="In" Type="String" />
             <Parameter Name="pass" Mode="In" Type="String" />
@@ -413,6 +394,10 @@
             <Parameter Name="pass" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="proc_ActivateCustomer_Result">
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="15" />
+        </ComplexType>
         <ComplexType Name="proc_AdminLoginCheck_Result">
           <Property Type="Int32" Name="admin_id" Nullable="false" />
           <Property Type="String" Name="username" Nullable="false" MaxLength="10" />
@@ -426,7 +411,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="dbproject_NEWModelStoreContainer" CdmEntityContainer="dbproject_NEWEntities1">
+        <EntityContainerMapping StorageEntityContainer="dbproject_NEWModelStoreContainer" CdmEntityContainer="dbproject_NEWEntities2">
           <EntitySetMapping Name="tbl_Admin">
             <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_Admin">
               <MappingFragment StoreEntitySet="tbl_Admin">
@@ -468,6 +453,7 @@
                 <ScalarProperty Name="Saving_Account_No" ColumnName="Saving_Account_No" />
                 <ScalarProperty Name="IFSC_Code" ColumnName="IFSC_Code" />
                 <ScalarProperty Name="Documents" ColumnName="Documents" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -489,8 +475,8 @@
             <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_FAQ">
               <MappingFragment StoreEntitySet="tbl_FAQ">
                 <ScalarProperty Name="Faq_Id" ColumnName="Faq_Id" />
-                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
                 <ScalarProperty Name="Questions" ColumnName="Questions" />
+                <ScalarProperty Name="Answers" ColumnName="Answers" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -517,6 +503,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="proc_ActivateCustomer" FunctionName="dbproject_NEWModel.Store.proc_ActivateCustomer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_ActivateCustomer_Result">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_ActivatedCustomer" FunctionName="dbproject_NEWModel.Store.proc_ActivatedCustomer" />
           <FunctionImportMapping FunctionImportName="proc_AdminLoginCheck" FunctionName="dbproject_NEWModel.Store.proc_AdminLoginCheck">
             <ResultMapping>
               <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_AdminLoginCheck_Result">

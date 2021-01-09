@@ -1,151 +1,77 @@
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.dll.config
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.pdb
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csc.exe
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csc.exe.config
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csc.rsp
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csi.exe
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csi.exe.config
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csi.rsp
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.AppContext.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Console.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.IO.Compression.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Net.Http.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Net.Sockets.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.ValueTuple.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XPath.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\vbc.exe
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\vbc.exe.config
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\vbc.rsp
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\VBCSCompiler.exe
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\EntityFramework.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\EntityFramework.SqlServer.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\Newtonsoft.Json.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Net.Http.Formatting.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.WebHost.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\EntityFramework.xml
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\EntityFramework.SqlServer.xml
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\Newtonsoft.Json.xml
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Net.Http.Formatting.xml
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.xml
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.WebHost.xml
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csprojAssemblyReference.cache
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csproj.CoreCompileInputs.cache
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csproj.CopyComplete
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.pdb
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Cors.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.Cors.dll
-C:\Users\windos 10\source\repos\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.Cors.xml
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.dll.config
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.pdb
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csc.exe
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csc.exe.config
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csc.rsp
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csi.exe
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csi.exe.config
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\csi.rsp
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Managed.Core.targets
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.AppContext.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Collections.Immutable.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Console.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Globalization.Calendars.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.IO.Compression.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.IO.FileSystem.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Net.Http.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Net.Sockets.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Reflection.Metadata.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.ValueTuple.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XmlDocument.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XPath.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\vbc.exe
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\vbc.exe.config
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\vbc.rsp
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\VBCSCompiler.exe
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\roslyn\VBCSCompiler.exe.config
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\EntityFramework.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\EntityFramework.SqlServer.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\Newtonsoft.Json.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Net.Http.Formatting.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Cors.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.Cors.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.WebHost.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\EntityFramework.xml
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\EntityFramework.SqlServer.xml
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.Cors.xml
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\Newtonsoft.Json.xml
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Net.Http.Formatting.xml
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.xml
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\System.Web.Http.WebHost.xml
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csprojAssemblyReference.cache
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csproj.CoreCompileInputs.cache
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csproj.CopyComplete
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.dll
-C:\MyLTI\FinalProject\FinanceGladiatorSolution\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.pdb
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.dll.config
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.pdb
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csc.exe
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csc.exe.config
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csc.rsp
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csi.exe
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csi.exe.config
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csi.rsp
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Managed.Core.targets
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.AppContext.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Collections.Immutable.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Console.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Globalization.Calendars.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.IO.Compression.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.IO.FileSystem.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Net.Http.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Net.Sockets.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.ValueTuple.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XmlDocument.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XPath.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\vbc.exe
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\vbc.exe.config
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\vbc.rsp
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\VBCSCompiler.exe
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\VBCSCompiler.exe.config
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\EntityFramework.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\EntityFramework.SqlServer.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\Newtonsoft.Json.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Net.Http.Formatting.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Cors.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.Cors.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.WebHost.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\EntityFramework.xml
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\EntityFramework.SqlServer.xml
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.Cors.xml
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\Newtonsoft.Json.xml
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Net.Http.Formatting.xml
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.xml
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.WebHost.xml
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csproj.CoreCompileInputs.cache
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csproj.CopyComplete
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.dll
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.pdb
+C:\MyLTI\FinalProject1\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csprojAssemblyReference.cache
 C:\MyLTI\FinalProject\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.dll.config
 C:\MyLTI\FinalProject\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.dll
 C:\MyLTI\FinalProject\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.pdb
@@ -220,77 +146,3 @@ C:\MyLTI\FinalProject\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj
 C:\MyLTI\FinalProject\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csproj.CopyComplete
 C:\MyLTI\FinalProject\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.dll
 C:\MyLTI\FinalProject\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.pdb
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.dll.config
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\FinanceGladiatorProjectApp.pdb
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csc.exe
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csc.exe.config
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csc.rsp
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csi.exe
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csi.exe.config
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\csi.rsp
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Managed.Core.targets
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\Microsoft.Win32.Primitives.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.AppContext.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Collections.Immutable.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Console.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Diagnostics.StackTrace.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Globalization.Calendars.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.IO.Compression.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.IO.Compression.ZipFile.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.IO.FileSystem.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Net.Http.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Net.Sockets.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Reflection.Metadata.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.ValueTuple.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.ReaderWriter.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XmlDocument.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XPath.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\System.Xml.XPath.XDocument.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\vbc.exe
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\vbc.exe.config
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\vbc.rsp
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\VBCSCompiler.exe
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\roslyn\VBCSCompiler.exe.config
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\EntityFramework.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\EntityFramework.SqlServer.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\Newtonsoft.Json.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Net.Http.Formatting.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Cors.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.Cors.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.WebHost.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\EntityFramework.xml
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\EntityFramework.SqlServer.xml
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.Cors.xml
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\Newtonsoft.Json.xml
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Net.Http.Formatting.xml
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.xml
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\System.Web.Http.WebHost.xml
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csprojAssemblyReference.cache
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csproj.CoreCompileInputs.cache
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.csproj.CopyComplete
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.dll
-D:\Angular\project\financeprojectgladiator\API\FinanceGladiatorProjectApp\obj\Debug\FinanceGladiatorProjectApp.pdb

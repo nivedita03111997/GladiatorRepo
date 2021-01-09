@@ -33,6 +33,7 @@ namespace FinanceGladiatorProjectApp.Models
         public string Saving_Account_No { get; set; }
         public string IFSC_Code { get; set; }
         public byte[] Documents { get; set; }
+        public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Card> tbl_Card { get; set; }

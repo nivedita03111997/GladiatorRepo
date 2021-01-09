@@ -12,7 +12,7 @@ namespace FinanceGladiatorProjectApp.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class CardController : ApiController
     {
-        dbproject_NEWEntities1 entities = new dbproject_NEWEntities1();
+        dbproject_NEWEntities2 entities = new dbproject_NEWEntities2();
 
         [HttpGet]
         public HttpResponseMessage Get(int id)//customerId
@@ -36,11 +36,12 @@ namespace FinanceGladiatorProjectApp.Controllers
             tbl_Card card = new tbl_Card();
             try
             {
+                proc_ActivateCustomer_Result rslt = entities.proc_ActivateCustomer(customer.Customer_Id).FirstOrDefault();
                 card.Customer_Id = customer.Customer_Id;
                 card.Card_Number = RandomDigits(10);
                 card.Valid_till = DateTime.Today.AddYears(2).Date;
                 card.Card_Type = customer.Card_Type;
-                card.Total_credit = customer.Card_Type == "gold" ? 50000 : 100000;
+                card.Total_credit = customer.Card_Type == "Gold" ? 50000 : 100000;
                 card.credit_used = 0;
                 card.Card_cost = 1500;
                 card.Status = "Activated";

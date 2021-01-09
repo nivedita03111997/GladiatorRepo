@@ -1,7 +1,11 @@
 table,th,td{
     border-collapse: collapse;
     padding: 5px;
+    color: white;
 }
 #p01{
     text-align: center;
+}
+body{
+    background-size: 100%;
 }

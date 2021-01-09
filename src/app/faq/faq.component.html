@@ -1,0 +1,13 @@
+<table class="table table-striped">
+    <thead>
+        <h3>Frequently Asked Questions</h3>
+    </thead>
+    <tbody *ngFor="let fa of faq">
+        <tr>
+            <th>{{fa.Questions}}</th>
+        </tr>
+        <tr>
+            <td>{{fa.Answers}}</td>
+        </tr>
+    </tbody>
+</table>

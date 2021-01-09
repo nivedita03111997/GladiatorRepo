@@ -44,6 +44,7 @@
     <Property Name="Saving_Account_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="IFSC_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Documents" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="tbl_Card" Relationship="Self.FK__tbl_Card__Custom__46E78A0C" FromRole="tbl_Customer" ToRole="tbl_Card" />
   </EntityType>
   <EntityType Name="tbl_EMI">
@@ -67,9 +68,8 @@
       <PropertyRef Name="Faq_Id" />
     </Key>
     <Property Name="Faq_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Product_Id" Type="Int32" />
-    <Property Name="Questions" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tbl_Product" Relationship="Self.FK__tbl_FAQ__Product__5AEE82B9" FromRole="tbl_FAQ" ToRole="tbl_Product" />
+    <Property Name="Questions" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Answers" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="tbl_Product">
     <Key>
@@ -77,12 +77,11 @@
     </Key>
     <Property Name="Product_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Product_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Product_Image" Type="String" />
+    <Property Name="Product_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Product_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Product_Cost" Type="Int32" />
     <Property Name="Processing_fees" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="tbl_EMI" Relationship="Self.FK__tbl_EMI__Product__5441852A" FromRole="tbl_Product" ToRole="tbl_EMI" />
-    <NavigationProperty Name="tbl_FAQ" Relationship="Self.FK__tbl_FAQ__Product__5AEE82B9" FromRole="tbl_Product" ToRole="tbl_FAQ" />
   </EntityType>
   <EntityType Name="tbl_Transaction">
     <Key>
@@ -155,19 +154,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tbl_FAQ__Product__5AEE82B9">
-    <End Role="tbl_Product" Type="Self.tbl_Product" Multiplicity="0..1" />
-    <End Role="tbl_FAQ" Type="Self.tbl_FAQ" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tbl_Product">
-        <PropertyRef Name="Product_Id" />
-      </Principal>
-      <Dependent Role="tbl_FAQ">
-        <PropertyRef Name="Product_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="dbproject_NEWEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="dbproject_NEWEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tbl_Admin" EntityType="Self.tbl_Admin" />
     <EntitySet Name="tbl_Card" EntityType="Self.tbl_Card" />
     <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" />
@@ -195,10 +182,12 @@
       <End Role="tbl_EMI" EntitySet="tbl_EMI" />
       <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
     </AssociationSet>
-    <AssociationSet Name="FK__tbl_FAQ__Product__5AEE82B9" Association="Self.FK__tbl_FAQ__Product__5AEE82B9">
-      <End Role="tbl_Product" EntitySet="tbl_Product" />
-      <End Role="tbl_FAQ" EntitySet="tbl_FAQ" />
-    </AssociationSet>
+    <FunctionImport Name="proc_ActivateCustomer" ReturnType="Collection(dbproject_NEWModel.proc_ActivateCustomer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_ActivatedCustomer">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="proc_AdminLoginCheck" ReturnType="Collection(dbproject_NEWModel.proc_AdminLoginCheck_Result)">
       <Parameter Name="un" Mode="In" Type="String" />
       <Parameter Name="pass" Mode="In" Type="String" />
@@ -208,6 +197,10 @@
       <Parameter Name="pass" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="proc_ActivateCustomer_Result">
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="15" />
+  </ComplexType>
   <ComplexType Name="proc_AdminLoginCheck_Result">
     <Property Type="Int32" Name="admin_id" Nullable="false" />
     <Property Type="String" Name="username" Nullable="false" MaxLength="10" />

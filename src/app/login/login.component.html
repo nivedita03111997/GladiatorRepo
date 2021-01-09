@@ -1,39 +1,46 @@
-<div class="header">
-    <h1>LOGIN</h1>
-</div>
-<div class="loginfeilds">
-   <form [formGroup]="loginForm" (ngSubmit)="loginCheck()">
-    <label>USERNAME </label>
-    <input type="text"  formControlName="username" [(ngModel)]="customerlogin.Username">
-    <div id="err" *ngIf="submitted && f.username.errors">
-        <div *ngIf="f.username.errors.required">Name is required</div>
-    </div>
-
-    <br>
-    <br>
-
-    <label>PASSWORD </label>
-    <input type="password"  formControlName="password" [(ngModel)]="customerlogin.Passwords">
-    <div id="err" *ngIf="submitted && f.password.errors">
-        <div *ngIf="f.password.errors.required">Password is required</div>
-    </div>
-
-    <br>
-    <div id="err" *ngIf="errMsg">
-        {{errMsg}}
-    </div>
-    <br>
-
-    <button>LOG IN</button><p>    </p>
-    <a [routerLink]="['/forgotpassword']" id="forgot">Forgot Password?</a>
-   </form>
-</div>
-<br>
-<div class="register">
-    New User ? <a href="#">Register here</a>
-</div>
-
-
+<body  background="assets/bg1.jpg">
     
 
+    <div class="container">
+    <form class="form-horizontal" role="form" [formGroup]="loginForm" (ngSubmit)="loginCheck()">
+        <h2>LOGIN</h2>
 
+        <div class="form-group" style="
+        text-align: center;">
+
+                <label>USERNAME </label>
+                 <input type="text"  formControlName="username" [(ngModel)]="customerlogin.Username">
+                 <div id="err" *ngIf="submitted && f.username.errors">
+                     <div *ngIf="f.username.errors.required">Name is required</div>
+                 </div>
+             
+                 <br>
+                 
+                 <label>PASSWORD </label>
+                 <input type="password"  formControlName="password" [(ngModel)]="customerlogin.Passwords">
+                 <div id="err" *ngIf="submitted && f.password.errors">
+                     <div *ngIf="f.password.errors.required">Password is required</div>
+                 </div>
+             
+                 <br>
+                 <div id="err" *ngIf="errMsg">
+                     {{errMsg}}
+                 </div>
+                 <br>
+             
+                 <button style="background-color: darkcyan; color: white;">LOG IN</button><p>    </p>
+                 <a [routerLink]="['/forgotpassword']" id="forgot">Forgot Password?</a>
+            
+             
+             <br>
+             <div id="forgot">
+                 New User ? <a href="#">Register here</a>
+             </div>
+            
+             
+
+    </div>
+</form>
+</div>
+
+</body>

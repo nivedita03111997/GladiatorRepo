@@ -13,7 +13,7 @@ namespace FinanceGladiatorProjectApp.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class CustomerController : ApiController
     {
-        dbproject_NEWEntities1 entities = new dbproject_NEWEntities1();
+        dbproject_NEWEntities2 entities = new dbproject_NEWEntities2();
 
     [HttpGet]
     public HttpResponseMessage Get(int id)//customerId

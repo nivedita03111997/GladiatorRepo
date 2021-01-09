@@ -15,10 +15,10 @@ namespace FinanceGladiatorProjectApp.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class dbproject_NEWEntities1 : DbContext
+    public partial class dbproject_NEWEntities2 : DbContext
     {
-        public dbproject_NEWEntities1()
-            : base("name=dbproject_NEWEntities1")
+        public dbproject_NEWEntities2()
+            : base("name=dbproject_NEWEntities2")
         {
         }
     
@@ -34,6 +34,24 @@ namespace FinanceGladiatorProjectApp.Models
         public virtual DbSet<tbl_FAQ> tbl_FAQ { get; set; }
         public virtual DbSet<tbl_Product> tbl_Product { get; set; }
         public virtual DbSet<tbl_Transaction> tbl_Transaction { get; set; }
+    
+        public virtual ObjectResult<proc_ActivateCustomer_Result> proc_ActivateCustomer(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_ActivateCustomer_Result>("proc_ActivateCustomer", idParameter);
+        }
+    
+        public virtual int proc_ActivatedCustomer(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("proc_ActivatedCustomer", idParameter);
+        }
     
         public virtual ObjectResult<proc_AdminLoginCheck_Result> proc_AdminLoginCheck(string un, string pass)
         {

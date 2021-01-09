@@ -2,8 +2,9 @@
     text-align: center;
     border: none;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding: 5px;
+    padding: 10px;
     text-decoration-style:solid;
+    margin-top: 20px;
 }
 #box{
     margin: auto;
@@ -12,6 +13,7 @@
     border-color: black;
     border-style: solid;
     font-size: large;
+    columns: black;
 }
 
 span{
@@ -31,7 +33,7 @@ span{
 }
 
 table, td, th {
-    border: 1px solid black;
+    border: 2px solid white;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 5px;
     text-align: center;
@@ -41,5 +43,9 @@ table, td, th {
     border-collapse: collapse;
     margin: auto;
     width: 800px;
+    bottom: 10px;
   }
-  
+  body{
+      color: white;
+      background-size: cover;
+  }
