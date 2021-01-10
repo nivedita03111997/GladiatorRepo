@@ -15,10 +15,10 @@ namespace FinanceGladiatorProjectApp.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class dbproject_NEWEntities2 : DbContext
+    public partial class dbproject_NEWEntities : DbContext
     {
-        public dbproject_NEWEntities2()
-            : base("name=dbproject_NEWEntities2")
+        public dbproject_NEWEntities()
+            : base("name=dbproject_NEWEntities")
         {
         }
     
@@ -77,6 +77,45 @@ namespace FinanceGladiatorProjectApp.Models
                 new ObjectParameter("pass", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_LoginCheck_Result>("proc_LoginCheck", unParameter, passParameter);
+        }
+    
+        public virtual ObjectResult<proc_ActivateCard_Result> proc_ActivateCard(Nullable<int> customerId)
+        {
+            var customerIdParameter = customerId.HasValue ?
+                new ObjectParameter("customerId", customerId) :
+                new ObjectParameter("customerId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_ActivateCard_Result>("proc_ActivateCard", customerIdParameter);
+        }
+    
+        public virtual ObjectResult<proc_updateCardAmountEmiPayment_Result> proc_updateCardAmountEmiPayment(Nullable<int> cardId, Nullable<decimal> amt)
+        {
+            var cardIdParameter = cardId.HasValue ?
+                new ObjectParameter("cardId", cardId) :
+                new ObjectParameter("cardId", typeof(int));
+    
+            var amtParameter = amt.HasValue ?
+                new ObjectParameter("amt", amt) :
+                new ObjectParameter("amt", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_updateCardAmountEmiPayment_Result>("proc_updateCardAmountEmiPayment", cardIdParameter, amtParameter);
+        }
+    
+        public virtual ObjectResult<proc_updateCardAmountProductPurchase_Result> proc_updateCardAmountProductPurchase(Nullable<int> cardId, Nullable<int> productId, Nullable<decimal> emiPerMonth)
+        {
+            var cardIdParameter = cardId.HasValue ?
+                new ObjectParameter("cardId", cardId) :
+                new ObjectParameter("cardId", typeof(int));
+    
+            var productIdParameter = productId.HasValue ?
+                new ObjectParameter("productId", productId) :
+                new ObjectParameter("productId", typeof(int));
+    
+            var emiPerMonthParameter = emiPerMonth.HasValue ?
+                new ObjectParameter("emiPerMonth", emiPerMonth) :
+                new ObjectParameter("emiPerMonth", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<proc_updateCardAmountProductPurchase_Result>("proc_updateCardAmountProductPurchase", cardIdParameter, productIdParameter, emiPerMonthParameter);
         }
     }
 }

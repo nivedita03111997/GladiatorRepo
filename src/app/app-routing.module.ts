@@ -12,6 +12,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { UserDetailsForAdminComponent } from './user-details-for-admin/user-details-for-admin.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { FaqComponent } from './faq/faq.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 const routes: Routes = [
@@ -20,15 +21,17 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'home',component:HomeComponent},
   {path:'adminLogin',component:AdminloginComponent},
-  {path:'productlist',component:ProductlistComponent},
+  {path:'productList/:cardId',component:ProductlistComponent},
   {path:'forgotpassword',component:ForgotpasswordComponent},
   {path:'changepassword',component:ChangepasswordComponent},
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'userDetails/:adminId',component:UserDetailsForAdminComponent},
   {path:'activateUser',component:ActivateUserComponent},
   {path:'dashboard/:customerId',component:DashboardComponent},
-  {path:'productlist/productDetails/:productId',component:ProductdetailsComponent},
-  {path:'faq',component:FaqComponent}
+  {path:'productList/:cardId/productDetails/:prodId',component:ProductdetailsComponent},
+  {path:'faq',component:FaqComponent},
+  {path:'productList/:cardId/productDetails/:prodId/payment/:emiPeriod',component:PaymentComponent},
+  {path:'payment',component:PaymentComponent}
 ];
 
 @NgModule({

@@ -11,7 +11,9 @@ namespace FinanceGladiatorProjectApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+  using System.Runtime.Serialization;
+
+  [DataContract]
     public partial class tbl_Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,13 +21,19 @@ namespace FinanceGladiatorProjectApp.Models
         {
             this.tbl_EMI = new HashSet<tbl_EMI>();
         }
-    
+
+    [DataMember]
         public int Product_Id { get; set; }
-        public string Product_Name { get; set; }
-        public string Product_Image { get; set; }
-        public string Product_Description { get; set; }
-        public Nullable<int> Product_Cost { get; set; }
-        public Nullable<decimal> Processing_fees { get; set; }
+    [DataMember]
+    public string Product_Name { get; set; }
+    [DataMember]
+    public string Product_Image { get; set; }
+    [DataMember]
+    public string Product_Description { get; set; }
+    [DataMember]
+    public Nullable<int> Product_Cost { get; set; }
+    [DataMember]
+    public Nullable<decimal> Processing_fees { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_EMI> tbl_EMI { get; set; }

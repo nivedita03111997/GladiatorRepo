@@ -6,16 +6,16 @@
     
             
             <div class="form-group">
-            <label class="col-sm-3 control-label">Name</label><br>
-            <input type="text" formControlName="name" [(ngModel)]="customer.Customer_Name"class="form-control" autofocus>
-            <div id="err" *ngIf="submitted && f.name.errors">
-            <div *ngIf="f.name.errors.required">Name is required</div>
-            </div></div>
+                <label class="col-sm-3 control-label">Name*</label><br>
+                <input type="text" formControlName="name" [(ngModel)]="customer.Customer_Name"class="form-control" placeholder="Name" autofocus>
+                <div id="err" *ngIf="submitted && f.name.errors">
+                <div *ngIf="f.name.errors.required">Name is required</div>
+                </div></div>
     
             <div class="form-group">
-                <label class="col-sm-3 control-label">Date of Birth</label>
+                <label class="col-sm-3 control-label">Date of Birth*</label>
                 <div >
-                    <input type="date" id="birthDate" class="form-control" formControlName="dob" [(ngModel)]="customer.Date_of_Birth">
+                    <input type="date" id="birthDate" class="form-control" formControlName="dob" [(ngModel)]="customer.Date_of_Birth" >
                     <div id="err"  *ngIf="submitted && f.dob.errors">
                         <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
                         </div>
@@ -26,7 +26,7 @@
             
             <div class="form-group">
                 <label class="col-sm-3 control-label">Email Id*</label><br>
-                <input type="text" formControlName="email" [(ngModel)]="customer.Email" class="form-control">
+                <input type="text" formControlName="email" [(ngModel)]="customer.Email" class="form-control" placeholder="Email Id">
                 <div id="err"  *ngIf="submitted && f.email.errors">
                     <div *ngIf="f.email.errors.required">Email is required</div>
                     <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
@@ -35,43 +35,45 @@
     
             
             <div class="form-group">
-                <label class="col-sm-3 control-label">Phone No</label><br>
-                <input type="text" formControlName="phone" [(ngModel)]="customer.Phone_No" class="form-control">
+                <label class="col-sm-3 control-label">Phone No*</label><br>
+                <input type="text" formControlName="phone" [(ngModel)]="customer.Phone_No" class="form-control" placeholder="Phone number">
                 <div id="err"  *ngIf="submitted && f.email.errors">
-                    <div *ngIf="f.email.errors.required">Email is required</div>
-                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    <div *ngIf="f.email.errors.required">Phone is required</div>
+                    <!-- <div *ngIf="f.email.errors.email">Email must be a valid email address</div> -->
                 </div>
             </div>
             
             
             <div class="form-group">
-                <label class="col-sm-3 control-label">User Name</label><br>
-                <input type="text" formControlName="username" [(ngModel)]="customer.Username" class="form-control" >
-                <div id="err"  *ngIf="submitted && f.username.errors">
+                <label class="col-sm-3 control-label">Username*</label><br>
+                <input type="text" formControlName="username" [(ngModel)]="customer.Username" class="form-control" placeholder="Username">
+                <div id="err" *ngIf="submitted && f.username.errors">
                         <div *ngIf="f.username.errors.required">Username is required</div>
-                    </div>
+                </div>
             </div>
     
             
             <div class="form-group">
-            <label class="col-sm-3 control-label">Password</label><br>
-                        <input type="password" formControlName="password" [(ngModel)]="customer.Passwords" class="form-control">
-                        <div id="err"  *ngIf="submitted && f.username.errors">
-                            <div *ngIf="f.username.errors.required">Username is required</div>
+            <label class="col-sm-3 control-label">Password*</label><br>
+                        <input type="password" formControlName="password" [(ngModel)]="customer.Passwords" class="form-control" placeholder="Password">
+                        <div id="err"  *ngIf="submitted && f.password.errors">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
                         </div>
                         </div>
     
             <div class="form-group">
-                <label for="password" class="col-sm-3 control-label">Confirm*</label>
-                <div>
-                    <input type="password" id="password" placeholder="Password" class="form-control">
+                <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
+                <input type="password" id="password" formControlName="confirmPassword" placeholder="Password" class="form-control">
+                <div id="err"  *ngIf="submitted && f.confirmPassword.errors">
+                   <div *ngIf="f.confirmPassword.errors.required">Confirm password is required</div>
+                   <div *ngIf="f.confirmPassword.errors.confirmedValidator">Password and confirm password must match</div>
                 </div>
             </div>
     
     
             <div class="form-group">
-                <label class="col-sm-3 control-label">Address</label><br>
-            <textarea cols="78"  formControlName="address" [(ngModel)]="customer.Address"></textarea>
+                <label class="col-sm-3 control-label">Address*</label><br>
+            <textarea cols="78"  formControlName="address" [(ngModel)]="customer.Address" placeholder="Name"></textarea>
             <div id="err"  *ngIf="submitted && f.address.errors">
                 <div *ngIf="f.address.errors.required">Address is required</div>
             </div>
@@ -80,55 +82,90 @@
         
         
             <div class="form-group">
-           <label class="col-sm-3 control-label">Card Type</label>
+           <label class="col-sm-3 control-label">Card Type*</label>
             <input style="width:20px;" type="radio" value="Gold" class="input" formControlName="cardtype" [(ngModel)]="customer.Card_Type">Gold
             <input type="radio" value="Titanium" class="input" formControlName="cardtype" [(ngModel)]="customer.Card_Type">Titanium
             <div id="err"  *ngIf="submitted && f.cardtype.errors">
-                <div *ngIf="f.cardtype.errors.required">Password is required</div>
+                <div *ngIf="f.cardtype.errors.required">Card Type is required</div>
             </div></div>
     
             
             <div class="form-group">
-            <label class="col-sm-3 control-label">Select Bank</label>
+            <label class="col-sm-3 control-label">Select Bank*</label>
                 <select  formControlName="banks" [(ngModel)]="customer.Select_Bank" class="form-control">
                 <option value="HSBC Bank">HSBC Bank</option>
                 <option value="State Bank of India">State Bank of India</option>
                 <option value="City Bank">City Bank</option>
                 <option value="Axis Bank">Axis Bank</option>
                 <option value="HDFC Bank">HDFC Bank</option>
+                <option value="Kotak Mahindra Bank">Kotak Mahindra Bank</option>
+                <option value="Bank of Baroda">Bank of Baroda</option>
+                <option value="ICICI Bank">ICICI Bank</option>
+                <option value="Punjab National Bank">Punjab National Bank</option>
+                <option value="Canara Bank">Canara Bank</option>
+                <option value="Bank Of India">Indian Bank</option>
               </select>
               <div id="err"  *ngIf="submitted && f.banks.errors">
-                <div *ngIf="f.banks.errors.required">Password is required</div>
+                <div *ngIf="f.banks.errors.required">Bank Type is required</div>
             </div>
         
             
             <div class="form-group">
-            <label class="col-sm-3 control-label">Account No:</label><br>
-            <input type="text" formControlName="accountno" [(ngModel)]="customer.Saving_Account_No" class="form-control">
+            <label class="col-sm-3 control-label">Account Number*</label><br>
+            <input type="text" formControlName="accountno" [(ngModel)]="customer.Saving_Account_No" class="form-control" placeholder="Account number">
             <div id="err"  *ngIf="submitted && f.accountno.errors">
-                <div *ngIf="f.accountno.errors.required">Password is required</div>
+                <div *ngIf="f.accountno.errors.required">Account number is required</div>
             </div>
             </div>
     
             
             <div class="form-group">
-            <label class="col-sm-3 control-label">IFSC code</label><br>
-            <input type="text" formControlName="ifsc" [(ngModel)]="customer.IFSC_Code" class="form-control">
+            <label class="col-sm-3 control-label">IFSC*</label><br>
+            <input type="text" formControlName="ifsc" [(ngModel)]="customer.IFSC_Code" class="form-control" placeholder="IFSC">
             <div id="err"  *ngIf="submitted && f.accountno.errors">
-                <div *ngIf="f.accountno.errors.required">Password is required</div>
+                <div *ngIf="f.accountno.errors.required">IFSC is required</div>
             </div>
             </div>    
+
+<!-- upload -->
+
+<!-- <div class="text-center"> 
+	<input class="form-control" type="file"
+			(change)="onChange($event)"> 
+
+	<button (click)="onUpload()" 
+		class="btn btn-success"> 
+		Upload 
+	</button> 
+</div>  -->
+
+<!-- Shareable short link of uoloaded file -->
+<!-- <div *ngIf="shortLink"> 
+	<a [routerLink]="['/registerCustomer']" routerLinkActive="router-link-active" ></a> 
+</div>  -->
+
+<!--Flag variable is used here-->
+<!-- <div class="container" *ngIf="loading"> 
+	<h3>Loading ...</h3> 
+</div>  -->
+
     
     
     
+
+
+
+
+
+<!-- upload end -->
         
             </div> 
             <br>
             <div style="text-align: center; border: 0px;">
-                <button type="submit" class="btn btn-primary btn-block">Register</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary btn-block">Register</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <br><button type="reset" (click)="onReset()">Reset</button>
     
-            <p>Already a member?<a href="#">Login Here</a></p>
+            <p>Already a member?<a [routerLink]="['/login']">Login Here</a></p>
         </div>
         
     </form>

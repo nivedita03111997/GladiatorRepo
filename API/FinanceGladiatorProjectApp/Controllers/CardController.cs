@@ -12,7 +12,7 @@ namespace FinanceGladiatorProjectApp.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class CardController : ApiController
     {
-        dbproject_NEWEntities2 entities = new dbproject_NEWEntities2();
+        dbproject_NEWEntities entities = new dbproject_NEWEntities();
 
         [HttpGet]
         public HttpResponseMessage Get(int id)//customerId
@@ -29,7 +29,8 @@ namespace FinanceGladiatorProjectApp.Controllers
 
         }
 
-        [HttpPost]
+   
+    [HttpPost]
         public HttpResponseMessage Post([FromUri]int id, [FromBody]tbl_Customer customer)
         {
             System.Data.Entity.DbContextTransaction transaction = entities.Database.BeginTransaction();
@@ -43,12 +44,13 @@ namespace FinanceGladiatorProjectApp.Controllers
                 card.Card_Type = customer.Card_Type;
                 card.Total_credit = customer.Card_Type == "Gold" ? 50000 : 100000;
                 card.credit_used = 0;
-                card.Card_cost = 1500;
+                card.Card_cost = customer.Card_Type == "Gold" ? 1000 : 2000;
                 card.Status = "Activated";
                 tbl_Admin admin = entities.tbl_Admin.Where(a => a.Admin_Id == id).FirstOrDefault();
             card.ApprovedBy = id;
             entities.tbl_Card.Add(card);
             entities.SaveChanges();
+            proc_ActivateCard_Result result = entities.proc_ActivateCard(customer.Customer_Id).FirstOrDefault();
             transaction.Commit();
             return Request.CreateResponse(HttpStatusCode.Created, card);
             }

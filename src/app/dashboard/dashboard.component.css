@@ -45,6 +45,9 @@ table, td, th {
     width: 800px;
     bottom: 10px;
   }
+  .tran{
+      color: white;
+  }
   body{
       color: white;
       background-size: cover;

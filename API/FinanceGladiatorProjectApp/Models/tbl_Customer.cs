@@ -11,7 +11,9 @@ namespace FinanceGladiatorProjectApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+  using System.Runtime.Serialization;
+
+  [DataContract]
     public partial class tbl_Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,21 +21,35 @@ namespace FinanceGladiatorProjectApp.Models
         {
             this.tbl_Card = new HashSet<tbl_Card>();
         }
-    
+
+    [DataMember]
         public int Customer_Id { get; set; }
-        public string Customer_Name { get; set; }
-        public Nullable<System.DateTime> Date_of_Birth { get; set; }
-        public string Email { get; set; }
-        public string Phone_No { get; set; }
-        public string Username { get; set; }
-        public string Passwords { get; set; }
-        public string Address { get; set; }
-        public string Card_Type { get; set; }
-        public string Select_Bank { get; set; }
-        public string Saving_Account_No { get; set; }
-        public string IFSC_Code { get; set; }
-        public byte[] Documents { get; set; }
-        public string Status { get; set; }
+    [DataMember]
+    public string Customer_Name { get; set; }
+    [DataMember]
+    public Nullable<System.DateTime> Date_of_Birth { get; set; }
+    [DataMember]
+    public string Email { get; set; }
+    [DataMember]
+    public string Phone_No { get; set; }
+    [DataMember]
+    public string Username { get; set; }
+    [DataMember]
+    public string Passwords { get; set; }
+    [DataMember]
+    public string Address { get; set; }
+    [DataMember]
+    public string Card_Type { get; set; }
+    [DataMember]
+    public string Select_Bank { get; set; }
+    [DataMember]
+    public string Saving_Account_No { get; set; }
+    [DataMember]
+    public string IFSC_Code { get; set; }
+    [DataMember]
+    public byte[] Documents { get; set; }
+    [DataMember]
+    public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Card> tbl_Card { get; set; }

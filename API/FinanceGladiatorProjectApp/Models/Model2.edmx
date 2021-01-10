@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbproject_NEWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbproject_NEWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tbl_Admin">
           <Key>
             <PropertyRef Name="Admin_Id" />
@@ -59,6 +59,8 @@
           <Property Name="Product_Id" Type="int" />
           <Property Name="EMI_Due_Date" Type="date" />
           <Property Name="EMI_Start_Date" Type="date" />
+          <Property Name="prodName" Type="varchar" MaxLength="20" />
+          <Property Name="emiPerMonth" Type="money" />
         </EntityType>
         <EntityType Name="tbl_FAQ">
           <Key>
@@ -73,7 +75,7 @@
             <PropertyRef Name="Product_Id" />
           </Key>
           <Property Name="Product_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Product_Name" Type="varchar" MaxLength="10" />
+          <Property Name="Product_Name" Type="varchar" MaxLength="20" />
           <Property Name="Product_Image" Type="varchar" MaxLength="50" />
           <Property Name="Product_Description" Type="varchar" MaxLength="50" />
           <Property Name="Product_Cost" Type="int" />
@@ -88,6 +90,7 @@
           <Property Name="Product_Name" Type="varchar" MaxLength="20" />
           <Property Name="Transaction_Date" Type="date" />
           <Property Name="Transaction_Amount" Type="money" />
+          <Property Name="cardId" Type="int" />
         </EntityType>
         <Association Name="FK__tbl_Card__Approv__48CFD27E">
           <End Role="tbl_Admin" Type="Self.tbl_Admin" Multiplicity="0..1" />
@@ -137,6 +140,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__tbl_Trans__cardI__14270015">
+          <End Role="tbl_Card" Type="Self.tbl_Card" Multiplicity="0..1" />
+          <End Role="tbl_Transaction" Type="Self.tbl_Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Card">
+              <PropertyRef Name="Card_Id" />
+            </Principal>
+            <Dependent Role="tbl_Transaction">
+              <PropertyRef Name="cardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tbl_Trans__EMI_I__571DF1D5">
           <End Role="tbl_EMI" Type="Self.tbl_EMI" Multiplicity="0..1" />
           <End Role="tbl_Transaction" Type="Self.tbl_Transaction" Multiplicity="*" />
@@ -149,6 +164,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="proc_ActivateCard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="customerId" Type="int" Mode="In" />
+        </Function>
         <Function Name="proc_ActivateCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
@@ -162,6 +180,15 @@
         <Function Name="proc_LoginCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="un" Type="varchar" Mode="In" />
           <Parameter Name="pass" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="proc_updateCardAmountEmiPayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cardId" Type="int" Mode="In" />
+          <Parameter Name="amt" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="proc_updateCardAmountProductPurchase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cardId" Type="int" Mode="In" />
+          <Parameter Name="productId" Type="int" Mode="In" />
+          <Parameter Name="emiPerMonth" Type="decimal" Mode="In" />
         </Function>
         <EntityContainer Name="dbproject_NEWModelStoreContainer">
           <EntitySet Name="tbl_Admin" EntityType="Self.tbl_Admin" Schema="dbo" store:Type="Tables" />
@@ -187,13 +214,16 @@
             <End Role="tbl_Product" EntitySet="tbl_Product" />
             <End Role="tbl_EMI" EntitySet="tbl_EMI" />
           </AssociationSet>
+          <AssociationSet Name="FK__tbl_Trans__cardI__14270015" Association="Self.FK__tbl_Trans__cardI__14270015">
+            <End Role="tbl_Card" EntitySet="tbl_Card" />
+            <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
+          </AssociationSet>
           <AssociationSet Name="FK__tbl_Trans__EMI_I__571DF1D5" Association="Self.FK__tbl_Trans__EMI_I__571DF1D5">
             <End Role="tbl_EMI" EntitySet="tbl_EMI" />
             <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbproject_NEWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -223,6 +253,7 @@
           <NavigationProperty Name="tbl_Admin" Relationship="Self.FK__tbl_Card__Approv__48CFD27E" FromRole="tbl_Card" ToRole="tbl_Admin" />
           <NavigationProperty Name="tbl_Customer" Relationship="Self.FK__tbl_Card__Custom__46E78A0C" FromRole="tbl_Card" ToRole="tbl_Customer" />
           <NavigationProperty Name="tbl_EMI" Relationship="Self.FK__tbl_EMI__Card_Id__534D60F1" FromRole="tbl_Card" ToRole="tbl_EMI" />
+          <NavigationProperty Name="tbl_Transaction" Relationship="Self.FK__tbl_Trans__cardI__14270015" FromRole="tbl_Card" ToRole="tbl_Transaction" />
         </EntityType>
         <EntityType Name="tbl_Customer">
           <Key>
@@ -256,6 +287,8 @@
           <Property Name="Product_Id" Type="Int32" />
           <Property Name="EMI_Due_Date" Type="DateTime" Precision="0" />
           <Property Name="EMI_Start_Date" Type="DateTime" Precision="0" />
+          <Property Name="prodName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="emiPerMonth" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="tbl_Card" Relationship="Self.FK__tbl_EMI__Card_Id__534D60F1" FromRole="tbl_EMI" ToRole="tbl_Card" />
           <NavigationProperty Name="tbl_Product" Relationship="Self.FK__tbl_EMI__Product__5441852A" FromRole="tbl_EMI" ToRole="tbl_Product" />
           <NavigationProperty Name="tbl_Transaction" Relationship="Self.FK__tbl_Trans__EMI_I__571DF1D5" FromRole="tbl_EMI" ToRole="tbl_Transaction" />
@@ -273,7 +306,7 @@
             <PropertyRef Name="Product_Id" />
           </Key>
           <Property Name="Product_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Product_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Product_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Product_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Product_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Product_Cost" Type="Int32" />
@@ -289,6 +322,8 @@
           <Property Name="Product_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Transaction_Date" Type="DateTime" Precision="0" />
           <Property Name="Transaction_Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="cardId" Type="Int32" />
+          <NavigationProperty Name="tbl_Card" Relationship="Self.FK__tbl_Trans__cardI__14270015" FromRole="tbl_Transaction" ToRole="tbl_Card" />
           <NavigationProperty Name="tbl_EMI" Relationship="Self.FK__tbl_Trans__EMI_I__571DF1D5" FromRole="tbl_Transaction" ToRole="tbl_EMI" />
         </EntityType>
         <Association Name="FK__tbl_Card__Approv__48CFD27E">
@@ -327,6 +362,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__tbl_Trans__cardI__14270015">
+          <End Role="tbl_Card" Type="Self.tbl_Card" Multiplicity="0..1" />
+          <End Role="tbl_Transaction" Type="Self.tbl_Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Card">
+              <PropertyRef Name="Card_Id" />
+            </Principal>
+            <Dependent Role="tbl_Transaction">
+              <PropertyRef Name="cardId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tbl_EMI__Product__5441852A">
           <End Role="tbl_Product" Type="Self.tbl_Product" Multiplicity="0..1" />
           <End Role="tbl_EMI" Type="Self.tbl_EMI" Multiplicity="*" />
@@ -351,7 +398,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbproject_NEWEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="dbproject_NEWEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbl_Admin" EntityType="Self.tbl_Admin" />
           <EntitySet Name="tbl_Card" EntityType="Self.tbl_Card" />
           <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" />
@@ -371,6 +418,10 @@
             <End Role="tbl_Card" EntitySet="tbl_Card" />
             <End Role="tbl_EMI" EntitySet="tbl_EMI" />
           </AssociationSet>
+          <AssociationSet Name="FK__tbl_Trans__cardI__14270015" Association="Self.FK__tbl_Trans__cardI__14270015">
+            <End Role="tbl_Card" EntitySet="tbl_Card" />
+            <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
+          </AssociationSet>
           <AssociationSet Name="FK__tbl_EMI__Product__5441852A" Association="Self.FK__tbl_EMI__Product__5441852A">
             <End Role="tbl_Product" EntitySet="tbl_Product" />
             <End Role="tbl_EMI" EntitySet="tbl_EMI" />
@@ -380,10 +431,10 @@
             <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
           </AssociationSet>
           <FunctionImport Name="proc_ActivateCustomer" ReturnType="Collection(dbproject_NEWModel.proc_ActivateCustomer_Result)">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="proc_ActivatedCustomer">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="proc_AdminLoginCheck" ReturnType="Collection(dbproject_NEWModel.proc_AdminLoginCheck_Result)">
             <Parameter Name="un" Mode="In" Type="String" />
@@ -392,6 +443,18 @@
           <FunctionImport Name="proc_LoginCheck" ReturnType="Collection(dbproject_NEWModel.proc_LoginCheck_Result)">
             <Parameter Name="un" Mode="In" Type="String" />
             <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="proc_ActivateCard" ReturnType="Collection(dbproject_NEWModel.proc_ActivateCard_Result)">
+            <Parameter Name="customerId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="proc_updateCardAmountEmiPayment" ReturnType="Collection(dbproject_NEWModel.proc_updateCardAmountEmiPayment_Result)">
+            <Parameter Name="cardId" Mode="In" Type="Int32" />
+            <Parameter Name="amt" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="proc_updateCardAmountProductPurchase" ReturnType="Collection(dbproject_NEWModel.proc_updateCardAmountProductPurchase_Result)">
+            <Parameter Name="cardId" Mode="In" Type="Int32" />
+            <Parameter Name="productId" Mode="In" Type="Int32" />
+            <Parameter Name="emiPerMonth" Mode="In" Type="Decimal" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="proc_ActivateCustomer_Result">
@@ -406,12 +469,24 @@
           <Property Type="Int32" Name="Customer_id" Nullable="false" />
           <Property Type="String" Name="customer_name" Nullable="true" MaxLength="20" />
         </ComplexType>
+        <ComplexType Name="proc_ActivateCard_Result">
+          <Property Type="Decimal" Name="Total_credit" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="credit_used" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="proc_updateCardAmountEmiPayment_Result">
+          <Property Type="Decimal" Name="Total_credit" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="credit_used" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="proc_updateCardAmountProductPurchase_Result">
+          <Property Type="Decimal" Name="Total_credit" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="credit_used" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="dbproject_NEWModelStoreContainer" CdmEntityContainer="dbproject_NEWEntities2">
+        <EntityContainerMapping StorageEntityContainer="dbproject_NEWModelStoreContainer" CdmEntityContainer="dbproject_NEWEntities">
           <EntitySetMapping Name="tbl_Admin">
             <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_Admin">
               <MappingFragment StoreEntitySet="tbl_Admin">
@@ -468,6 +543,8 @@
                 <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
                 <ScalarProperty Name="EMI_Due_Date" ColumnName="EMI_Due_Date" />
                 <ScalarProperty Name="EMI_Start_Date" ColumnName="EMI_Start_Date" />
+                <ScalarProperty Name="prodName" ColumnName="prodName" />
+                <ScalarProperty Name="emiPerMonth" ColumnName="emiPerMonth" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -500,6 +577,7 @@
                 <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
                 <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
                 <ScalarProperty Name="Transaction_Amount" ColumnName="Transaction_Amount" />
+                <ScalarProperty Name="cardId" ColumnName="cardId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -525,6 +603,30 @@
               <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_LoginCheck_Result">
                 <ScalarProperty Name="Customer_id" ColumnName="Customer_id" />
                 <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_ActivateCard" FunctionName="dbproject_NEWModel.Store.proc_ActivateCard">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_ActivateCard_Result">
+                <ScalarProperty Name="Total_credit" ColumnName="Total_credit" />
+                <ScalarProperty Name="credit_used" ColumnName="credit_used" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_updateCardAmountEmiPayment" FunctionName="dbproject_NEWModel.Store.proc_updateCardAmountEmiPayment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_updateCardAmountEmiPayment_Result">
+                <ScalarProperty Name="Total_credit" ColumnName="Total_credit" />
+                <ScalarProperty Name="credit_used" ColumnName="credit_used" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="proc_updateCardAmountProductPurchase" FunctionName="dbproject_NEWModel.Store.proc_updateCardAmountProductPurchase">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_updateCardAmountProductPurchase_Result">
+                <ScalarProperty Name="Total_credit" ColumnName="Total_credit" />
+                <ScalarProperty Name="credit_used" ColumnName="credit_used" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

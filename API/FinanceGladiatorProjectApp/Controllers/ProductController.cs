@@ -12,7 +12,7 @@ namespace FinanceGladiatorProjectApp.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class ProductController : ApiController
     {
-        dbproject_NEWEntities2 entities = new dbproject_NEWEntities2();
+        dbproject_NEWEntities entities = new dbproject_NEWEntities();
 
         public IEnumerable<tbl_Product> GetProducts()
         {

@@ -9,7 +9,7 @@ import { CustomerServiceService } from '../services/customer-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  customerId:any;
+  customer:any;
   customerlogin:any;
   loginForm!: FormGroup;
   submitted = false;
@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
   loginCheck(){
     this.submitted = true;
     this.customerService.loginCHeckFromApi(this.customerlogin).subscribe(
-      c=>{ this.customerId=c;this.errMsg=undefined,
-        (this.customerId!=null)? this.router.navigate(['dashboard/'+this.customerId]):{}
+      c=>{ this.customer=c;this.errMsg=undefined,
+        (this.customer.Customer_Id!=null)?(this.customer.Status=="Deactivated")? this.errMsg="Your account has not been activated":this.router.navigate(['dashboard/'+this.customer.Customer_Id]):{}
         },
       err=>{this.errMsg=err.error.Message}
      );

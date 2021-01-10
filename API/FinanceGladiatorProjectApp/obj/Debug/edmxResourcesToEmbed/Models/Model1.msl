@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="dbproject_NEWModelStoreContainer" CdmEntityContainer="dbproject_NEWEntities2">
+  <EntityContainerMapping StorageEntityContainer="dbproject_NEWModelStoreContainer" CdmEntityContainer="dbproject_NEWEntities3">
     <EntitySetMapping Name="tbl_Admin">
       <EntityTypeMapping TypeName="dbproject_NEWModel.tbl_Admin">
         <MappingFragment StoreEntitySet="tbl_Admin">
@@ -57,6 +57,8 @@
           <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
           <ScalarProperty Name="EMI_Due_Date" ColumnName="EMI_Due_Date" />
           <ScalarProperty Name="EMI_Start_Date" ColumnName="EMI_Start_Date" />
+          <ScalarProperty Name="prodName" ColumnName="prodName" />
+          <ScalarProperty Name="emiPerMonth" ColumnName="emiPerMonth" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -89,33 +91,9 @@
           <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
           <ScalarProperty Name="Transaction_Date" ColumnName="Transaction_Date" />
           <ScalarProperty Name="Transaction_Amount" ColumnName="Transaction_Amount" />
+          <ScalarProperty Name="cardId" ColumnName="cardId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="proc_ActivateCustomer" FunctionName="dbproject_NEWModel.Store.proc_ActivateCustomer">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_ActivateCustomer_Result">
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="proc_ActivatedCustomer" FunctionName="dbproject_NEWModel.Store.proc_ActivatedCustomer" />
-    <FunctionImportMapping FunctionImportName="proc_AdminLoginCheck" FunctionName="dbproject_NEWModel.Store.proc_AdminLoginCheck">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_AdminLoginCheck_Result">
-          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
-          <ScalarProperty Name="username" ColumnName="username" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="proc_LoginCheck" FunctionName="dbproject_NEWModel.Store.proc_LoginCheck">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dbproject_NEWModel.proc_LoginCheck_Result">
-          <ScalarProperty Name="Customer_id" ColumnName="Customer_id" />
-          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

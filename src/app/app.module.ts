@@ -19,6 +19,8 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
 import { CustomerServiceService } from './services/customer-service.service';
 import { AdminService } from './services/admin.service';
 import { FaqComponent } from './faq/faq.component';
+import { PaymentComponent } from './payment/payment.component';
+import { EmiPaymentComponent } from './emi-payment/emi-payment.component';
 
 
 
@@ -41,7 +43,9 @@ import { FaqComponent } from './faq/faq.component';
     RegisterComponent,
     HomeComponent,
     ProductdetailsComponent,
-    FaqComponent
+    FaqComponent,
+    PaymentComponent,
+    EmiPaymentComponent
 
  
   ],
@@ -51,7 +55,7 @@ import { FaqComponent } from './faq/faq.component';
     FormsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [CustomerServiceService,AdminService],
   bootstrap: [AppComponent]

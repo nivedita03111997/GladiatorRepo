@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductlistComponent implements OnInit {
 Products:any;
-  constructor(private productService:ProductService) { 
+cardId:any;
+prodId:any;
+  constructor(private active:ActivatedRoute,private productService:ProductService) { 
+    this.active.params.subscribe(param=>this.cardId=param["cardId"]);
      this.productService.getProductList().subscribe(p=>{
        this.Products=p,console.log(this.Products)
      })

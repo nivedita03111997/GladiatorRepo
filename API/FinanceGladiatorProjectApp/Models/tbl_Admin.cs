@@ -11,7 +11,9 @@ namespace FinanceGladiatorProjectApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+  using System.Runtime.Serialization;
+
+  [DataContract]
     public partial class tbl_Admin
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +21,13 @@ namespace FinanceGladiatorProjectApp.Models
         {
             this.tbl_Card = new HashSet<tbl_Card>();
         }
-    
+
+    [DataMember]
         public int Admin_Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+    [DataMember]
+    public string Username { get; set; }
+    [DataMember]
+    public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Card> tbl_Card { get; set; }

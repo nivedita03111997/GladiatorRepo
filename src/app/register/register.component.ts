@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ConfirmedValidator } from '../confirmed.validator';
 import { Customer } from '../models/customer.model';
 import { CustomerServiceService } from '../services/customer-service.service';
 
@@ -33,6 +34,8 @@ submitted=false;
       banks:['',Validators.required],
       accountno:['',Validators.required],
       ifsc:['',Validators.required]
+    },{
+      validator:ConfirmedValidator('password','confirmPassword')
     });
   }
   get f() { return this.registerForm.controls; }
@@ -47,9 +50,9 @@ submitted=false;
     this.customer.status = "Deactivated";
     console.log(this.customer);
     this.customerService.registerCustomerFromApi(this.customer).subscribe(c=>{
-      this.customer=c;
+      this.customer=c,
+      (this.customer.Customer_Id==null)?{}:this.router.navigate(['login']);
     })
-    this.router.navigate(['login']);
   }
 
 }

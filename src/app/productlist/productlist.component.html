@@ -19,7 +19,7 @@
       <li>PRODUCT NAME:{{p.Product_Name}}</li>
       <li>PRODUCT DETAILS:{{p.Product_Description}}</li>
       <li>COST:{{p.Product_Cost}}</li>
-      <li><button [routerLink]="['productDetails/'+p.Product_Id]" class="btn btn-primary">BUY NOW</button></li>
+      <li><button [routerLink]="['productDetails/',p.Product_Id]" class="btn btn-primary">BUY NOW</button></li>
   </ul>
 </tr>
 </table>

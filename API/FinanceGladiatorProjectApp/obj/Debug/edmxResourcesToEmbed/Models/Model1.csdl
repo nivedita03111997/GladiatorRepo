@@ -16,7 +16,7 @@
     <Property Name="Card_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Customer_Id" Type="Int32" />
     <Property Name="Card_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-    <Property Name="Valid_till" Type="DateTime" Precision="0" />
+    <Property Name="Valid_till" Type="DateTime" />
     <Property Name="Card_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Total_credit" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="Card_cost" Type="Int32" />
@@ -26,6 +26,7 @@
     <NavigationProperty Name="tbl_Admin" Relationship="Self.FK__tbl_Card__Approv__48CFD27E" FromRole="tbl_Card" ToRole="tbl_Admin" />
     <NavigationProperty Name="tbl_Customer" Relationship="Self.FK__tbl_Card__Custom__46E78A0C" FromRole="tbl_Card" ToRole="tbl_Customer" />
     <NavigationProperty Name="tbl_EMI" Relationship="Self.FK__tbl_EMI__Card_Id__534D60F1" FromRole="tbl_Card" ToRole="tbl_EMI" />
+    <NavigationProperty Name="tbl_Transaction" Relationship="Self.FK__tbl_Trans__cardI__14270015" FromRole="tbl_Card" ToRole="tbl_Transaction" />
   </EntityType>
   <EntityType Name="tbl_Customer">
     <Key>
@@ -33,7 +34,7 @@
     </Key>
     <Property Name="Customer_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Customer_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Date_of_Birth" Type="DateTime" Precision="0" />
+    <Property Name="Date_of_Birth" Type="DateTime" />
     <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="Phone_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Username" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
@@ -57,8 +58,10 @@
     <Property Name="Total_Amount_Paid" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="Card_Id" Type="Int32" />
     <Property Name="Product_Id" Type="Int32" />
-    <Property Name="EMI_Due_Date" Type="DateTime" Precision="0" />
-    <Property Name="EMI_Start_Date" Type="DateTime" Precision="0" />
+    <Property Name="EMI_Due_Date" Type="DateTime" />
+    <Property Name="EMI_Start_Date" Type="DateTime" />
+    <Property Name="prodName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="emiPerMonth" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="tbl_Card" Relationship="Self.FK__tbl_EMI__Card_Id__534D60F1" FromRole="tbl_EMI" ToRole="tbl_Card" />
     <NavigationProperty Name="tbl_Product" Relationship="Self.FK__tbl_EMI__Product__5441852A" FromRole="tbl_EMI" ToRole="tbl_Product" />
     <NavigationProperty Name="tbl_Transaction" Relationship="Self.FK__tbl_Trans__EMI_I__571DF1D5" FromRole="tbl_EMI" ToRole="tbl_Transaction" />
@@ -76,7 +79,7 @@
       <PropertyRef Name="Product_Id" />
     </Key>
     <Property Name="Product_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Product_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Product_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Product_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Product_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Product_Cost" Type="Int32" />
@@ -90,8 +93,10 @@
     <Property Name="Transaction_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="EMI_Id" Type="Int32" />
     <Property Name="Product_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Transaction_Date" Type="DateTime" Precision="0" />
+    <Property Name="Transaction_Date" Type="DateTime" />
     <Property Name="Transaction_Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cardId" Type="Int32" />
+    <NavigationProperty Name="tbl_Card" Relationship="Self.FK__tbl_Trans__cardI__14270015" FromRole="tbl_Transaction" ToRole="tbl_Card" />
     <NavigationProperty Name="tbl_EMI" Relationship="Self.FK__tbl_Trans__EMI_I__571DF1D5" FromRole="tbl_Transaction" ToRole="tbl_EMI" />
   </EntityType>
   <Association Name="FK__tbl_Card__Approv__48CFD27E">
@@ -130,6 +135,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__tbl_Trans__cardI__14270015">
+    <End Role="tbl_Card" Type="Self.tbl_Card" Multiplicity="0..1" />
+    <End Role="tbl_Transaction" Type="Self.tbl_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Card">
+        <PropertyRef Name="Card_Id" />
+      </Principal>
+      <Dependent Role="tbl_Transaction">
+        <PropertyRef Name="cardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__tbl_EMI__Product__5441852A">
     <End Role="tbl_Product" Type="Self.tbl_Product" Multiplicity="0..1" />
     <End Role="tbl_EMI" Type="Self.tbl_EMI" Multiplicity="*" />
@@ -154,7 +171,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="dbproject_NEWEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="dbproject_NEWEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tbl_Admin" EntityType="Self.tbl_Admin" />
     <EntitySet Name="tbl_Card" EntityType="Self.tbl_Card" />
     <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" />
@@ -174,6 +191,10 @@
       <End Role="tbl_Card" EntitySet="tbl_Card" />
       <End Role="tbl_EMI" EntitySet="tbl_EMI" />
     </AssociationSet>
+    <AssociationSet Name="FK__tbl_Trans__cardI__14270015" Association="Self.FK__tbl_Trans__cardI__14270015">
+      <End Role="tbl_Card" EntitySet="tbl_Card" />
+      <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
+    </AssociationSet>
     <AssociationSet Name="FK__tbl_EMI__Product__5441852A" Association="Self.FK__tbl_EMI__Product__5441852A">
       <End Role="tbl_Product" EntitySet="tbl_Product" />
       <End Role="tbl_EMI" EntitySet="tbl_EMI" />
@@ -182,31 +203,5 @@
       <End Role="tbl_EMI" EntitySet="tbl_EMI" />
       <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
     </AssociationSet>
-    <FunctionImport Name="proc_ActivateCustomer" ReturnType="Collection(dbproject_NEWModel.proc_ActivateCustomer_Result)">
-      <Parameter Name="id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="proc_ActivatedCustomer">
-      <Parameter Name="id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="proc_AdminLoginCheck" ReturnType="Collection(dbproject_NEWModel.proc_AdminLoginCheck_Result)">
-      <Parameter Name="un" Mode="In" Type="String" />
-      <Parameter Name="pass" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="proc_LoginCheck" ReturnType="Collection(dbproject_NEWModel.proc_LoginCheck_Result)">
-      <Parameter Name="un" Mode="In" Type="String" />
-      <Parameter Name="pass" Mode="In" Type="String" />
-    </FunctionImport>
   </EntityContainer>
-  <ComplexType Name="proc_ActivateCustomer_Result">
-    <Property Type="String" Name="Status" Nullable="true" MaxLength="15" />
-    <Property Type="String" Name="Username" Nullable="false" MaxLength="15" />
-  </ComplexType>
-  <ComplexType Name="proc_AdminLoginCheck_Result">
-    <Property Type="Int32" Name="admin_id" Nullable="false" />
-    <Property Type="String" Name="username" Nullable="false" MaxLength="10" />
-  </ComplexType>
-  <ComplexType Name="proc_LoginCheck_Result">
-    <Property Type="Int32" Name="Customer_id" Nullable="false" />
-    <Property Type="String" Name="customer_name" Nullable="true" MaxLength="20" />
-  </ComplexType>
 </Schema>

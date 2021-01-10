@@ -54,6 +54,8 @@
     <Property Name="Product_Id" Type="int" />
     <Property Name="EMI_Due_Date" Type="date" />
     <Property Name="EMI_Start_Date" Type="date" />
+    <Property Name="prodName" Type="varchar" MaxLength="20" />
+    <Property Name="emiPerMonth" Type="money" />
   </EntityType>
   <EntityType Name="tbl_FAQ">
     <Key>
@@ -68,7 +70,7 @@
       <PropertyRef Name="Product_Id" />
     </Key>
     <Property Name="Product_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Product_Name" Type="varchar" MaxLength="10" />
+    <Property Name="Product_Name" Type="varchar" MaxLength="20" />
     <Property Name="Product_Image" Type="varchar" MaxLength="50" />
     <Property Name="Product_Description" Type="varchar" MaxLength="50" />
     <Property Name="Product_Cost" Type="int" />
@@ -83,6 +85,7 @@
     <Property Name="Product_Name" Type="varchar" MaxLength="20" />
     <Property Name="Transaction_Date" Type="date" />
     <Property Name="Transaction_Amount" Type="money" />
+    <Property Name="cardId" Type="int" />
   </EntityType>
   <Association Name="FK__tbl_Card__Approv__48CFD27E">
     <End Role="tbl_Admin" Type="Self.tbl_Admin" Multiplicity="0..1" />
@@ -129,6 +132,18 @@
       </Principal>
       <Dependent Role="tbl_EMI">
         <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Trans__cardI__14270015">
+    <End Role="tbl_Card" Type="Self.tbl_Card" Multiplicity="0..1" />
+    <End Role="tbl_Transaction" Type="Self.tbl_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Card">
+        <PropertyRef Name="Card_Id" />
+      </Principal>
+      <Dependent Role="tbl_Transaction">
+        <PropertyRef Name="cardId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -181,6 +196,10 @@
     <AssociationSet Name="FK__tbl_EMI__Product__5441852A" Association="Self.FK__tbl_EMI__Product__5441852A">
       <End Role="tbl_Product" EntitySet="tbl_Product" />
       <End Role="tbl_EMI" EntitySet="tbl_EMI" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Trans__cardI__14270015" Association="Self.FK__tbl_Trans__cardI__14270015">
+      <End Role="tbl_Card" EntitySet="tbl_Card" />
+      <End Role="tbl_Transaction" EntitySet="tbl_Transaction" />
     </AssociationSet>
     <AssociationSet Name="FK__tbl_Trans__EMI_I__571DF1D5" Association="Self.FK__tbl_Trans__EMI_I__571DF1D5">
       <End Role="tbl_EMI" EntitySet="tbl_EMI" />

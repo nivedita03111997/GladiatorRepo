@@ -15,8 +15,8 @@
     <br>
     
     <span>TOTAL CREDIT:{{card.Total_credit}}</span><br>
-    <span>CREDIT USED:{{card.Credit_Used}}</span><br>
-    <span>REMAINING CREDIT:{{card.Total_credit}}-{{card.Credit_Used}}</span>
+    <span>CREDIT USED:{{card.credit_used}}</span><br>
+    <!-- <span>REMAINING CREDIT:{{card.Total_credit}}-{{card.credit_used}}</span> -->
     <br><br>
     <div id="header"><b>PRODUCTS PURCHASED</b></div>
     <span> NAME:</span>   <br>    <span>AMOUNT:</span>
@@ -34,11 +34,12 @@
             <td>DATE</td>
             <td>AMOUNT PAID</td>
         </tr>
-        <tr>
-            <td>abc</td>
-            <td>abc</td>
-            <td>abc</td>
+        <tr *ngFor="let t of tranList">
+            <td>{{t.Product_Name}}</td>
+            <td>{{t.Transaction_Date}}</td>
+            <td>{{t.Transaction_Amount}}</td>
         </tr>
     </table>
     </div>
+    <a (click)="Navigate(card.Card_Id)" class="btn btn-success">Show Products</a>
     </body>

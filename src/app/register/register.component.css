@@ -31,6 +31,10 @@ nav{
    letter-spacing: 4px;
 }
 
+#err{
+    color: red;
+}
+
 label{
     font-weight: bold;
     color: black;

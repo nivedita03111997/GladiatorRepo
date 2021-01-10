@@ -13,10 +13,18 @@ table{
     width: 200;
     float: left;
 }
+#text{
+    color: green;
+}
 
+
+#u{
+    color: white;
+}
 
 .e{
     text-align: center;
+    color: white;
 }
 #btntwo{
     float: left;
