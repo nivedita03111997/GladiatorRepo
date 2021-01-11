@@ -1,5 +1,11 @@
 
-
+<script>
+    $("#emip").change(function(){
+    var val1 = $("#cost").val();
+    var val2 = $("#emip").val();
+    alert(val1/val2);
+});
+</script>
 <body style="background-color:  rgb(13, 55, 56);">
 
 
@@ -10,7 +16,7 @@
         <img class="p1" src='{{Product.Product_Image}}'>
         <p>PRODUCT NAME:{{Product.Product_Name}}</p>
         <p>PRODUCT DETAILS:{{Product.Product_Description}}</p>
-        <p>COST:{{Product.Product_Cost}}</p>
+        <p id="cost">COST:{{Product.Product_Cost}}</p>
     </div>
         </td>
     </tr>
@@ -18,17 +24,19 @@
 
 <div class="e">
     <p>EMI PERIOD</p>
-    <select [(ngModel)]="emiperiod">
+    <select  id="emip" [(ngModel)]="emiperiod">
         <option value=3>3 MONTHS</option>
         <option value=6>6 MONTHS</option>
         <option value=9>9 MONTHS</option>
         <option value=12>12 MONTHS</option>
     </select>
 </div>
-<p id="text">EMI STARTING  pm</p>
+<p id="result">EMI STARTING  pm</p>
 <div id="container">
     <button (click)="checkBalance()" class="btn btn-primary">BUY NOW</button>
 </div>
 <p id="u">Terms and Conditions</p>
 
+
 </body>
+

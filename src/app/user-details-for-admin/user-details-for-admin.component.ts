@@ -10,7 +10,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./user-details-for-admin.component.css']
 })
 export class UserDetailsForAdminComponent implements OnInit {
-
   adminid:any;
   customers:any;
   card:any;
@@ -25,9 +24,9 @@ export class UserDetailsForAdminComponent implements OnInit {
   statusUpdate(id:number=this.adminid,customer:Customer){
       this.adminService.adminActivatefromApi(id,customer).subscribe(c=>{
         this.card = c;
-       
       })
       location.reload();
+      
     }
      
       

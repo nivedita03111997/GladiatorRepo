@@ -20,7 +20,6 @@ import { TermsComponent } from './terms/terms.component';
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'registerCustomer',component:RegisterComponent},
-  {path:'dashboard',component:DashboardComponent},
   {path:'home',component:HomeComponent},
   {path:'adminLogin',component:AdminloginComponent},
   {path:'productList/:cardId/:custId',component:ProductlistComponent},

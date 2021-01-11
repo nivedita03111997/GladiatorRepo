@@ -32,7 +32,7 @@ submitted=false;
       address:['',Validators.required],
       cardtype:['',Validators.required],
       banks:['',Validators.required],
-      accountno:['',Validators.required],
+      accountno:['',[Validators.required,Validators.minLength(12)]],
       ifsc:['',Validators.required]
     },{
       validator:ConfirmedValidator('password','confirmPassword')

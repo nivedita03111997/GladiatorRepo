@@ -37,6 +37,9 @@ namespace FinanceGladiatorProjectApp.Controllers
             tbl_Card card = new tbl_Card();
             try
             {
+                tbl_Card c = entities.tbl_Card.Where(ca => ca.Customer_Id == customer.Customer_Id).FirstOrDefault();
+                if(c!=null)
+                   return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "Customer already activated.");
                 proc_ActivateCustomer_Result rslt = entities.proc_ActivateCustomer(customer.Customer_Id).FirstOrDefault();
                 card.Customer_Id = customer.Customer_Id;
                 card.Card_Number = RandomDigits(10);

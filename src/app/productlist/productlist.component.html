@@ -6,12 +6,12 @@
 </style>
 <body  style="background-color:  rgb(13, 55, 56);">
 <div class="container">
-<form class="searchbar"> <input type="search" placeholder="Search here" name="search" class="searchbar-input" onkeyup="buttonUp();" required> <input type="submit" class="searchbar-submit" value="GO"> <span class="searchbar-icon"><i class="fa fa-search" aria-hidden="true"></i></span> </form>
+<input type="text" name="n" [(ngModel)]="inputS" #input (input)="searchProducts(input.value,Products)" id="searchProduct"  placeholder="Search Products.." >
 </div>
 
 
 <table border="1">
-<tr *ngFor="let p of Products">
+<tr *ngFor="let p of filteredList">
   <ul>
       <li><img class="p1" src='{{p.Product_Image}}'></li>
       <li>PRODUCT NAME:{{p.Product_Name}}</li>
