@@ -14,7 +14,7 @@ namespace FinanceGladiatorProjectApp.Models
   using System.Runtime.Serialization;
 
   [DataContract]
-    public partial class tbl_Product
+  public partial class tbl_Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_Product()
@@ -23,7 +23,7 @@ namespace FinanceGladiatorProjectApp.Models
         }
 
     [DataMember]
-        public int Product_Id { get; set; }
+    public int Product_Id { get; set; }
     [DataMember]
     public string Product_Name { get; set; }
     [DataMember]

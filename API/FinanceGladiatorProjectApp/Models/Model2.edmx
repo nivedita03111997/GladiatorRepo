@@ -445,7 +445,7 @@
             <Parameter Name="pass" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="proc_ActivateCard" ReturnType="Collection(dbproject_NEWModel.proc_ActivateCard_Result)">
-            <Parameter Name="customerId" Mode="In" Type="Int32" />
+          <Parameter Name="customerId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="proc_updateCardAmountEmiPayment" ReturnType="Collection(dbproject_NEWModel.proc_updateCardAmountEmiPayment_Result)">
             <Parameter Name="cardId" Mode="In" Type="Int32" />

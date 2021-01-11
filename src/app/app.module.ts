@@ -21,6 +21,7 @@ import { AdminService } from './services/admin.service';
 import { FaqComponent } from './faq/faq.component';
 import { PaymentComponent } from './payment/payment.component';
 import { EmiPaymentComponent } from './emi-payment/emi-payment.component';
+import { TermsComponent } from './terms/terms.component';
 
 
 
@@ -45,7 +46,8 @@ import { EmiPaymentComponent } from './emi-payment/emi-payment.component';
     ProductdetailsComponent,
     FaqComponent,
     PaymentComponent,
-    EmiPaymentComponent
+    EmiPaymentComponent,
+    TermsComponent
 
  
   ],

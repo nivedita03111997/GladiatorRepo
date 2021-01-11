@@ -10,6 +10,7 @@ import { EmiService } from '../services/emi.service';
 export class PaymentComponent implements OnInit {
 productId:any;
 cardId:any;
+customerId:any;
 tenurePeriod:any;
 emi:any;
 amt:any;
@@ -18,6 +19,8 @@ product:any;
     this.active.params.subscribe(param=>this.productId=param["prodId"]);
     this.active.params.subscribe(param=>this.cardId=param["cardId"]);
     this.active.params.subscribe(param=>this.tenurePeriod=param["emiPeriod"]);
+    this.active.params.subscribe(param=>this.customerId=param["custId"]);
+    console.log(this.customerId);
     
    }
 
@@ -28,7 +31,7 @@ product:any;
       e=>{this.emi=e,console.log(this.emi)}
     )
     alert("Payment Successfull");
-    //this.router.navigate(['dashboard/'+this.customer.Customer_Id])
+    this.router.navigate(['dashboard/'+this.customerId]);
   }
 
 }

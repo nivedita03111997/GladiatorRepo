@@ -1,12 +1,10 @@
-<header>
-  <p>HI,USERNAME</p>
-  <button href="#" class="btn btn-primary">Logout</button>
-</header>
+
 <style>
 #searchbar{
    tab-size: 100px;
 }
 </style>
+<body  style="background-color:  rgb(13, 55, 56);">
 <div class="container">
 <form class="searchbar"> <input type="search" placeholder="Search here" name="search" class="searchbar-input" onkeyup="buttonUp();" required> <input type="submit" class="searchbar-submit" value="GO"> <span class="searchbar-icon"><i class="fa fa-search" aria-hidden="true"></i></span> </form>
 </div>
@@ -19,7 +17,8 @@
       <li>PRODUCT NAME:{{p.Product_Name}}</li>
       <li>PRODUCT DETAILS:{{p.Product_Description}}</li>
       <li>COST:{{p.Product_Cost}}</li>
-      <li><button [routerLink]="['productDetails/',p.Product_Id]" class="btn btn-primary">BUY NOW</button></li>
+      <li><button [routerLink]="['productDetails/',p.Product_Id,p.Product_Cost]" class="btn btn-primary">BUY NOW</button></li>
   </ul>
 </tr>
 </table>
+</body>

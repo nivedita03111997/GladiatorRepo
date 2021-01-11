@@ -14,10 +14,19 @@ table{
     float: left;
 }
 #text{
-    color: green;
+    color:white;
 }
 
-
+#container{
+    text-align: center;
+}
+#text{
+    text-align: center;
+}
+#u{
+    text-align: center;
+    text-decoration: underline;
+}
 #u{
     color: white;
 }

@@ -14,7 +14,7 @@ namespace FinanceGladiatorProjectApp.Models
   using System.Runtime.Serialization;
 
   [DataContract]
-    public partial class tbl_EMI
+  public partial class tbl_EMI
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_EMI()
@@ -23,7 +23,7 @@ namespace FinanceGladiatorProjectApp.Models
         }
 
     [DataMember]
-        public int EMI_Id { get; set; }
+    public int EMI_Id { get; set; }
     [DataMember]
     public Nullable<int> Tenure_period { get; set; }
     [DataMember]
@@ -42,7 +42,7 @@ namespace FinanceGladiatorProjectApp.Models
     public string prodName { get; set; }
     [DataMember]
     public Nullable<decimal> emiPerMonth { get; set; }
-    
+
         public virtual tbl_Card tbl_Card { get; set; }
         public virtual tbl_Product tbl_Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

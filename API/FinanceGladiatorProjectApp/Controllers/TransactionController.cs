@@ -14,13 +14,14 @@ namespace FinanceGladiatorProjectApp.Controllers
     {
     dbproject_NEWEntities entities = new dbproject_NEWEntities();
     [HttpPost]
-    public HttpResponseMessage Post(int id, string prodName, decimal amt,int cardId)
+    public HttpResponseMessage Post(int id, string prodName, decimal amt)
     {
       System.Data.Entity.DbContextTransaction transaction = entities.Database.BeginTransaction();
       tbl_Transaction tran = new tbl_Transaction();
       //try
       //{
       tbl_Product prod = entities.tbl_Product.Where(p => p.Product_Name == prodName).FirstOrDefault();
+      int cardId = (int)entities.tbl_EMI.Where(e => e.EMI_Id == id).FirstOrDefault().Card_Id;
       tran.EMI_Id = id;
       tran.Product_Name = prod.Product_Name;
       tran.Transaction_Date = DateTime.Today;
@@ -29,6 +30,7 @@ namespace FinanceGladiatorProjectApp.Controllers
       entities.tbl_Transaction.Add(tran);
       entities.SaveChanges();
       transaction.Commit();
+      proc_updateCardAmountEmiPayment_Result result = entities.proc_updateCardAmountEmiPayment(cardId, amt).FirstOrDefault();
       return Request.CreateResponse(HttpStatusCode.Created, tran);
       //}
       //catch (Exception)

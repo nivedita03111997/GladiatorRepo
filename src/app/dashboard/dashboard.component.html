@@ -1,4 +1,4 @@
-<body background="assets/bg1.jpg" >  
+<body style="background-color:  rgb(13, 55, 56);" >  
     
     <div id="header">DASHBOARD</div>
     
@@ -19,11 +19,37 @@
     <!-- <span>REMAINING CREDIT:{{card.Total_credit}}-{{card.credit_used}}</span> -->
     <br><br>
     <div id="header"><b>PRODUCTS PURCHASED</b></div>
-    <span> NAME:</span>   <br>    <span>AMOUNT:</span>
+    <table *ngFor="let e of emiList ">
+        <!-- <tr>
+            <td colspan="2"><img class="p1" src='{{e.Product_Image}}'></td>
+        </tr> -->
+        <tr>
+            <th>Name:</th>
+            <td>{{e.prodName}}</td>
+        </tr>
+        <tr>
+            <th>Amount:</th>
+            <td>{{e.Product_cost}}</td>
+        </tr>
+        <tr>
+            <th>Paid:</th>
+            <td>{{e.Total_Amount_Paid}}</td>
+        </tr>
+        <tr>
+            <th>EMI Due Date:</th>
+            <td>{{e.EMI_Due_Date}}</td>
+        </tr>
+        <tr>
+            <td colspan="2"> <button [disabled]=checkValidity(e.EMI_Due_Date) [routerLink]="['emiPayment/',e.EMI_Id,e.prodName,e.emiPerMonth,customer.Customer_Id]" class="btn btn-primary">PAY EMI</button></td>
+        </tr>
+        
+    </table>
+
+    <!-- <span> NAME:</span>   <br>    <span>AMOUNT:</span>
     <br>
     <span>PAID:</span>
     <br>
-    <span>BALANCE:</span>
+    <span>BALANCE:</span> -->
     <br><br><br>
     <div style="text-align: center;">
     <span ><b>RECENT TRANSACTIONS</b></span>
@@ -41,5 +67,5 @@
         </tr>
     </table>
     </div>
-    <a (click)="Navigate(card.Card_Id)" class="btn btn-success">Show Products</a>
+    <a (click)="Navigate(card.Card_Id,customer.Customer_Id)" class="btn btn-success">Show Products</a>
     </body>

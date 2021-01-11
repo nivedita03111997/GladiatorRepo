@@ -11,8 +11,10 @@ export class ProductlistComponent implements OnInit {
 Products:any;
 cardId:any;
 prodId:any;
+customerId:any;
   constructor(private active:ActivatedRoute,private productService:ProductService) { 
     this.active.params.subscribe(param=>this.cardId=param["cardId"]);
+    this.active.params.subscribe(param=>this.customerId=param["custId"]);
      this.productService.getProductList().subscribe(p=>{
        this.Products=p,console.log(this.Products)
      })

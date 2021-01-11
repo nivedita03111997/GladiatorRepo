@@ -14,7 +14,7 @@ namespace FinanceGladiatorProjectApp.Models
   using System.Runtime.Serialization;
 
   [DataContract]
-    public partial class tbl_Card
+  public partial class tbl_Card
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_Card()
@@ -24,7 +24,7 @@ namespace FinanceGladiatorProjectApp.Models
         }
 
     [DataMember]
-        public int Card_Id { get; set; }
+    public int Card_Id { get; set; }
     [DataMember]
     public Nullable<int> Customer_Id { get; set; }
     [DataMember]

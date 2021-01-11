@@ -13,6 +13,8 @@ import { UserDetailsForAdminComponent } from './user-details-for-admin/user-deta
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { FaqComponent } from './faq/faq.component';
 import { PaymentComponent } from './payment/payment.component';
+import { EmiPaymentComponent } from './emi-payment/emi-payment.component';
+import { TermsComponent } from './terms/terms.component';
 
 
 const routes: Routes = [
@@ -21,17 +23,18 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'home',component:HomeComponent},
   {path:'adminLogin',component:AdminloginComponent},
-  {path:'productList/:cardId',component:ProductlistComponent},
+  {path:'productList/:cardId/:custId',component:ProductlistComponent},
   {path:'forgotpassword',component:ForgotpasswordComponent},
   {path:'changepassword',component:ChangepasswordComponent},
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'userDetails/:adminId',component:UserDetailsForAdminComponent},
   {path:'activateUser',component:ActivateUserComponent},
   {path:'dashboard/:customerId',component:DashboardComponent},
-  {path:'productList/:cardId/productDetails/:prodId',component:ProductdetailsComponent},
+  {path:'productList/:cardId/:custId/productDetails/:prodId/:prodCost',component:ProductdetailsComponent},
   {path:'faq',component:FaqComponent},
-  {path:'productList/:cardId/productDetails/:prodId/payment/:emiPeriod',component:PaymentComponent},
-  {path:'payment',component:PaymentComponent}
+  {path:'terms',component:TermsComponent},
+  {path:'payment/:cardId/:prodId/:custId/:emiPeriod',component:PaymentComponent},
+  {path:'dashboard/:customerId/emiPayment/:emiId/:prodName/:emiPerMonth/:custId',component:EmiPaymentComponent}
 ];
 
 @NgModule({

@@ -19,17 +19,16 @@ namespace FinanceGladiatorProjectApp.Models
     [DataMember]
         public int Transaction_Id { get; set; }
     [DataMember]
-        public Nullable<int> EMI_Id { get; set; }
+    public Nullable<int> EMI_Id { get; set; }
     [DataMember]
-        public string Product_Name { get; set; }
+    public string Product_Name { get; set; }
     [DataMember]
-        public Nullable<System.DateTime> Transaction_Date { get; set; }
+    public Nullable<System.DateTime> Transaction_Date { get; set; }
     [DataMember]
-        public Nullable<decimal> Transaction_Amount { get; set; }
+    public Nullable<decimal> Transaction_Amount { get; set; }
     [DataMember]
-        public Nullable<int> cardId { get; set; }
-    
-        public virtual tbl_Card tbl_Card { get; set; }
+    public Nullable<int> cardId { get; set; }
+    public virtual tbl_Card tbl_Card { get; set; }
         public virtual tbl_EMI tbl_EMI { get; set; }
     }
 }

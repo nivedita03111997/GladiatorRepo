@@ -1,21 +1,7 @@
 
-<header>
-    <p>HI,USERNAME</p>
-    <button href="#" class="btn btn-primary">Logout</button>
-</header>
-<style>
-    
-    #container{
-        text-align: center;
-    }
-    #text{
-        text-align: center;
-    }
-    #u{
-        text-align: center;
-        text-decoration: underline;
-    }
-</style>
+
+<body style="background-color:  rgb(13, 55, 56);">
+
 
 <table>
     <tr>
@@ -39,8 +25,10 @@
         <option value=12>12 MONTHS</option>
     </select>
 </div>
-<p id="text">EMI STARTING{{emiPerMonth}} pm</p>
+<p id="text">EMI STARTING  pm</p>
 <div id="container">
-    <button [routerLink]="['payment/',emiperiod]" class="btn btn-primary">PAY NOW</button>
-
+    <button (click)="checkBalance()" class="btn btn-primary">BUY NOW</button>
+</div>
 <p id="u">Terms and Conditions</p>
+
+</body>

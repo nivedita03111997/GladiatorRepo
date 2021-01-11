@@ -17,7 +17,9 @@ card:any;
 customer:any;
 emi:any;
 tranList:any;
-  constructor(private router:Router,private active:ActivatedRoute,private customerService:CustomerServiceService,private transactionService:TransactionService) { 
+emiList:any;
+currentDate!:Date;
+  constructor(private emiService:EmiService,private router:Router,private active:ActivatedRoute,private customerService:CustomerServiceService,private transactionService:TransactionService) { 
     this.active.params.subscribe(param=>this.customerId=param["customerId"]);
     this.customerService.getCardByCustomerId(this.customerId).subscribe(c=>
       {this.card=c
@@ -27,13 +29,24 @@ tranList:any;
       console.log(this.customer)})
     this.transactionService.getTransactionByCustomerId(this.customerId).subscribe(t=>
       {this.tranList=t})
+    this.emiService.getEmiByCustomerIdByAPI(this.customerId).subscribe(e=>
+      {this.emiList=e})
+      
   }
 
   ngOnInit(): void {
   }
-
-  Navigate(cardId:number){
-    this.router.navigate(['productList',cardId]);
+  checkValidity(dueDate:Date)
+  {
+    this.currentDate=new Date();
+    console.log(this.currentDate);
+    // if(this.currentDate.getTime()>=dueDate.getTime())
+    //   return true;
+    // else
+    //   return false;
+  }
+  Navigate(cardId:number,custId:number){
+    this.router.navigate(['productList',cardId,custId]);
   }
 
 }

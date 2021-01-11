@@ -27,6 +27,10 @@ header {
     float: left;
 }
 
+body{
+    color: white;
+}
+
 table{
     border:1px solid black;
 }
