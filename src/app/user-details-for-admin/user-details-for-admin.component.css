@@ -1,11 +1,12 @@
-table,th,td{
-    border-collapse: collapse;
-    padding: 5px;
-    color: white;
+table{
+    width: 800px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-#p01{
-    text-align: center;
+.spacer{
+    flex: 1 1 auto;
 }
-body{
-    background-size: 100%;
+
+a{
+    text-decoration: none;
 }

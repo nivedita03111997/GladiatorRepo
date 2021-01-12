@@ -8,6 +8,9 @@ import { ProductService } from '../services/product.service';
   templateUrl: './productdetails.component.html',
   styleUrls: ['./productdetails.component.css']
 })
+
+
+
 export class ProductdetailsComponent implements OnInit {
 productId:any;
 cardId:any;

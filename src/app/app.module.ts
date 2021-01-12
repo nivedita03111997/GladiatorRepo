@@ -22,8 +22,15 @@ import { FaqComponent } from './faq/faq.component';
 import { PaymentComponent } from './payment/payment.component';
 import { EmiPaymentComponent } from './emi-payment/emi-payment.component';
 import { TermsComponent } from './terms/terms.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card'; 
+import {MatTabsModule} from '@angular/material/tabs'; 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
+import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatIconModule} from '@angular/material/icon'
 
 
 @NgModule({
@@ -58,6 +65,15 @@ import { TermsComponent } from './terms/terms.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatIconModule
   ],
   providers: [CustomerServiceService,AdminService],
   bootstrap: [AppComponent]

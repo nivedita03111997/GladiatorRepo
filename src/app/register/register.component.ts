@@ -14,6 +14,9 @@ export class RegisterComponent implements OnInit {
 customer:any;
 registerForm!: FormGroup;
 submitted=false;
+shortLink: string = ""; 
+loading: boolean = false; 
+file: any;
   constructor(private router:Router,private formBuilder:FormBuilder,private customerService:CustomerServiceService) { 
     this.customer=new Customer();
   }
@@ -29,11 +32,13 @@ submitted=false;
         Validators.pattern('^[a-z0-9A-Z]{3,6}$')]],
       password:['', [Validators.required, Validators.minLength(6),Validators.maxLength(10)]],
       confirmPassword:['',Validators.required],
-      address:['',Validators.required],
+      address:['',[Validators.required,Validators.minLength(40)]],
       cardtype:['',Validators.required],
       banks:['',Validators.required],
-      accountno:['',[Validators.required,Validators.minLength(12)]],
-      ifsc:['',Validators.required]
+      accountno:['',[Validators.required,Validators.minLength(12),
+        Validators.pattern('^\d{9,18}$')]],
+      ifsc:['',[Validators.required,
+        Validators.pattern("^[A-Z]{4}0[A-Z0-9]{6}$")]]
     },{
       validator:ConfirmedValidator('password','confirmPassword')
     });
@@ -42,7 +47,7 @@ submitted=false;
 
   onReset() {
     this.submitted=false;
-    this.registerForm.reset();
+    
 }
 
   registerCustomer(){
@@ -51,8 +56,30 @@ submitted=false;
     console.log(this.customer);
     this.customerService.registerCustomerFromApi(this.customer).subscribe(c=>{
       this.customer=c,
-      (this.customer.Customer_Id==null)?{}:this.router.navigate(['login']);
+      (this.customer.Customer_Id==null)?{}:alert("Registered successfully"),this.router.navigate(['login']);
     })
   }
+
+  onChange(event:any) 
+  { 
+    this.file = event.target.files[0]; 
+} 
+ 
+// OnClick of button Upload 
+onUpload() { 
+    this.loading = !this.loading; 
+    // console.log(this.file); 
+    // this.fileUploadService.upload(this.file).subscribe( 
+    //     (event: any) => { 
+    //         if (typeof (event) === 'object') { 
+ 
+    //             // Short link via api response 
+    //             this.shortLink = event.link; 
+ 
+    //             this.loading = false; // Flag variable  
+    //         }   
+    //     } 
+    // ); 
+}
 
 }

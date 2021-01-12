@@ -18,9 +18,9 @@ namespace FinanceGladiatorProjectApp.Controllers
     {
       System.Data.Entity.DbContextTransaction transaction = entities.Database.BeginTransaction();
       tbl_Transaction tran = new tbl_Transaction();
-      //try
-      //{
-      tbl_Product prod = entities.tbl_Product.Where(p => p.Product_Name == prodName).FirstOrDefault();
+      try
+      {
+        tbl_Product prod = entities.tbl_Product.Where(p => p.Product_Name == prodName).FirstOrDefault();
       int cardId = (int)entities.tbl_EMI.Where(e => e.EMI_Id == id).FirstOrDefault().Card_Id;
       tran.EMI_Id = id;
       tran.Product_Name = prod.Product_Name;
@@ -32,13 +32,13 @@ namespace FinanceGladiatorProjectApp.Controllers
       transaction.Commit();
       proc_updateCardAmountEmiPayment_Result result = entities.proc_updateCardAmountEmiPayment(cardId, amt).FirstOrDefault();
       return Request.CreateResponse(HttpStatusCode.Created, tran);
-      //}
-      //catch (Exception)
-      //{
-      //  transaction.Rollback();
-      //  return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "transaction failed");
-      //}
     }
+      catch (Exception)
+      {
+        transaction.Rollback();
+        return Request.CreateErrorResponse(HttpStatusCode.NotAcceptable, "transaction failed");
+      }
+}
 
     [HttpGet]
     public HttpResponseMessage Get(int id)//custId

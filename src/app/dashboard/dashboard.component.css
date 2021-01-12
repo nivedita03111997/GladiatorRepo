@@ -10,10 +10,9 @@
     margin: auto;
     width: 300px;
     padding: 10px;
-    border-color: black;
     border-style: solid;
     font-size: large;
-    columns: black;
+    columns: white;
 }
 
 span{
@@ -25,7 +24,7 @@ span{
     background-color: rgb(40, 138, 40);
     padding: 5px;
     width: 310px;
-    border-color: black;
+    border-color: white;
     border-style: solid;
     text-align: center;
     font-size: large;
@@ -33,7 +32,7 @@ span{
 }
 
 table, td, th {
-    border: 2px solid white;
+    border: 2px solid black;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 5px;
     text-align: center;
@@ -46,9 +45,9 @@ table, td, th {
     bottom: 10px;
   }
   .tran{
-      color: white;
+      color: black;
   }
   body{
-      color: white;
+      color: black;
       background-size: cover;
   }

@@ -1,12 +1,11 @@
-
 header {
     background-color:white;
     padding: 30px;
     text-align: right;
   }
 
-.down{
-    text-align: center;
+p{
+    color: black;
 }
 .p1{
     height: 200px;
@@ -15,27 +14,32 @@ header {
     color: cyan;
 }
 
-.p2{
-    height: 200px;
-    width: 200px;
-    float: left;  
-}
-
-.p3{
-    height: 200px;
-    width: 200px;
-    float: left;
-}
-
 body{
     color: white;
 }
-
-table{
-    border:1px solid black;
-}
-
 .btn{
     color: cyan;
 }
 
+#searchProduct{
+    margin-top: 20px;
+    width: 50%;
+    padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+table{
+    /* border:1px solid black; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+}
+
+.card{
+    width: 97%;
+    height: 30%;
+    border-radius: 5px;
+    margin:20px ;
+    margin-top: 45px;
+    
+}

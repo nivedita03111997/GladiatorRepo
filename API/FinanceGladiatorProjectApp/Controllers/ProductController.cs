@@ -22,15 +22,22 @@ namespace FinanceGladiatorProjectApp.Controllers
         [HttpGet]
         public HttpResponseMessage Get(int id)//cardId
         {
-            tbl_Product prod = entities.tbl_Product.Where(p => p.Product_Id == id).FirstOrDefault();
-            if (prod != null)
-            {
-                return Request.CreateResponse(HttpStatusCode.OK, prod);
-            }
-            else
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Prouct does not exist..");
-            }
+      try
+      {
+        tbl_Product prod = entities.tbl_Product.Where(p => p.Product_Id == id).FirstOrDefault();
+        if (prod != null)
+        {
+          return Request.CreateResponse(HttpStatusCode.OK, prod);
+        }
+        else
+        {
+          return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Prouct does not exist..");
+        }
+      }
+      catch (Exception)
+      {
+        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Could not load");
+      }
 
         }
     }

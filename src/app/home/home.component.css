@@ -1,12 +1,4 @@
-nav{
-    height:25px;
-    width:100%;
-    margin:20px auto;
-    padding:20px 5px 20px 0;
-    border:2px solid black;
-    /* border-radius:10px; */
-    background-color:rgb(13, 29, 43);
-    }
+
     #btnone{
         font-size: 17px;  
         background-color: darkcyan;
@@ -27,11 +19,7 @@ nav{
         width: 150px;
     }
     
-    .topnav-right {
   
-  text-align: right;
-  text-transform: uppercase;
-}
 table{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -43,7 +31,7 @@ td
 }
 .card{
     width: 80%;
-    height: 30%;
+    height: 100%;
     border-radius: 5px;
     margin:20px ;
     margin-top: 45px;
@@ -59,3 +47,4 @@ td
 body{
     background-size: cover;
 }
+

@@ -1,24 +1,30 @@
 
-<style>
-#searchbar{
-   tab-size: 100px;
-}
-</style>
-<body  style="background-color:  rgb(13, 55, 56);">
+
+
+<body>
 <div class="container">
 <input type="text" name="n" [(ngModel)]="inputS" #input (input)="searchProducts(input.value,Products)" id="searchProduct"  placeholder="Search Products.." >
 </div>
 
+<div class="card">
+  <table>
+    <tr *ngFor="let p of filteredList">
+      <td>
+        <div>
+          <img class="p1" src='{{p.Product_Image}}'>
+        </div>
+      </td>
+      <td>
+        <div>
+          <p>PRODUCT NAME:{{p.Product_Name}}</p>
+          <p>PRODUCT DETAILS:{{p.Product_Description}}</p>
+          <p>COST:{{p.Product_Cost}}</p>
+          <button [routerLink]="['productDetails/',p.Product_Id,p.Product_Cost]" class="btn btn-primary">BUY NOW</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
 
-<table border="1">
-<tr *ngFor="let p of filteredList">
-  <ul>
-      <li><img class="p1" src='{{p.Product_Image}}'></li>
-      <li>PRODUCT NAME:{{p.Product_Name}}</li>
-      <li>PRODUCT DETAILS:{{p.Product_Description}}</li>
-      <li>COST:{{p.Product_Cost}}</li>
-      <li><button [routerLink]="['productDetails/',p.Product_Id,p.Product_Cost]" class="btn btn-primary">BUY NOW</button></li>
-  </ul>
-</tr>
-</table>
+
 </body>

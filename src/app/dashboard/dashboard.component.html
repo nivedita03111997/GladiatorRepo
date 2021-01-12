@@ -1,15 +1,15 @@
-<body style="background-color:  rgb(13, 55, 56);" >  
+<body>  
     
     <div id="header">DASHBOARD</div>
     
-    <div id="box" style="background-color: white;color: black;">
+    <div id="box" style="background-color: rgb(154, 231, 193);color: black;">
         <span style="float: right;color:red;">LFI</span><br>
         <span>Card Number:{{card.Card_Number}}</span><br>
         <span>Name:{{customer.Customer_Name}}</span><br>
-        <span>VAlid till:{{card.Valid_till}}</span><br>
+        <span>VAlid till:{{card.Valid_till | slice:0:10}}</span><br>
         <span>CARD TYPE:{{card.Card_Type}}</span><br>
     </div>
-    <div id="gr" style="color: white;">
+    <div id="gr" style="color: black;">
         <span>{{card.Status}}</span>
     </div>
     <br>
@@ -37,7 +37,7 @@
         </tr>
         <tr>
             <th>EMI Due Date:</th>
-            <td>{{e.EMI_Due_Date}}</td>
+            <td>{{e.EMI_Due_Date | slice:0:10}}</td>
         </tr>
         <tr>
             <td colspan="2"> <button [disabled]=checkValidity(e.EMI_Due_Date) [routerLink]="['emiPayment/',e.EMI_Id,e.prodName,e.emiPerMonth,customer.Customer_Id]" class="btn btn-primary">PAY EMI</button></td>
@@ -62,7 +62,7 @@
         </tr>
         <tr *ngFor="let t of tranList">
             <td>{{t.Product_Name}}</td>
-            <td>{{t.Transaction_Date}}</td>
+            <td>{{t.Transaction_Date | slice:0:10}}</td>
             <td>{{t.Transaction_Amount}}</td>
         </tr>
     </table>

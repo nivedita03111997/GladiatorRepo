@@ -1,32 +1,32 @@
-<body style="background-color:  rgb(13, 55, 56);">
+
+
+<body>
     <!-- <p>user-details-for-admin works!</p> -->
-<table border="1" align="center" width=97%>
-    <p id="p01">ADMIN PAGE<p>
-    <br><br><br><br>
+
+    <h2 style="color: rgb(58, 24, 209);text-shadow: 2px 2px 4px #000000;text-align: center;">Admin Page</h2>
+    <br>
     <!-- <button class="btn btn-success" (click)="getCustomers()">User Details</button> -->
-    <table class="table table-striped" border="1">
+<table class="table">
     <thead>
-        <tr>
-            <td colspan="13" align="center">USER DETAILS DATABASE</td>
-        </tr>
-        <tr>    
-            <th>NAME</th>
-            <th>UNAME</th>
-            <th>DATE OF BIRTH</th>
-            <th>EMAIL ID</th>
-            <th>PHONE NO</th>
-            <th>ADDRESS</th>
-            <th>CARD TYPE</th>
-            <th>BANK</th>
-            <th>SAVING ACCOUNT NO</th>
-            <th>IFSC CODE</th>
-            <th>ACTIVATION</th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let cust of customers">
-                <td>{{cust.Customer_Name}}</td>
-                <td>{{cust.Username}}</td>
+      <tr>
+        <th>NAME</th>
+        <th>UNAME</th>
+        <th>DATE OF BIRTH</th>
+
+        <th>EMAIL ID</th>
+        <th>PHONE NO</th>
+        <th>ADDRESS</th>
+        <th>CARD TYPE</th>
+        <th>BANK</th>
+        <th>SAVING ACCOUNT NO</th>
+        <th>IFSC CODE</th>
+        <th>ACTIVATION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-primary"  *ngFor="let cust of customers">
+        <th scope="row">{{cust.Customer_Name}}</th>
+        <td>{{cust.Username}}</td>
                 <td>{{cust.Date_of_Birth}}</td>
                 <td>{{cust.Email}}</td>
                 <td>{{cust.Phone_No}}</td>
@@ -35,11 +35,8 @@
                 <td>{{cust.Select_Bank}}</td>
                 <td>{{cust.Saving_Account_No}}</td>
                 <td>{{cust.IFSC_Code}}</td>
-                <td>
-                    <button (click)="statusUpdate(undefined,cust)">{{cust.Status}}</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</table>
+                <td><button (click)="statusUpdate(undefined,cust)">{{cust.Status}}</button></td>
+      </tr>
+    </tbody>
+  </table>
 </body>

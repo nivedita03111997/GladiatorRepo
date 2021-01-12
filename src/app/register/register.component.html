@@ -1,8 +1,9 @@
-<body  style="background-color:  rgb(13, 55, 56);">
+
+<body>
 
     <div class="container">
         <form [formGroup]="registerForm" (ngSubmit)="registerCustomer()" class="form-horizontal" role="form">
-            <h2 style="text-align: center;">Registration</h2>
+            <h2 style="color: white;text-shadow: 2px 2px 4px #000000;">Registration</h2>
     
             
             <div class="form-group">
@@ -29,7 +30,7 @@
                 <input type="text" formControlName="email" [(ngModel)]="customer.Email" class="form-control" placeholder="Email Id">
                 <div id="err"  *ngIf="submitted && f.email.errors">
                     <div *ngIf="f.email.errors.required">Email is required</div>
-                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    <div *ngIf="f.email.errors.pattern">Email must be a valid email address</div>
                 </div>
             </div>
     
@@ -37,9 +38,9 @@
             <div class="form-group">
                 <label class="col-sm-3 control-label">Phone No*</label><br>
                 <input type="text" formControlName="phone" [(ngModel)]="customer.Phone_No" class="form-control" placeholder="Phone number">
-                <div id="err"  *ngIf="submitted && f.email.errors">
-                    <div *ngIf="f.email.errors.required">Phone is required</div>
-                    <!-- <div *ngIf="f.email.errors.email">Email must be a valid email address</div> -->
+                <div id="err"  *ngIf="submitted && f.phone.errors">
+                    <div *ngIf="f.phone.errors.required">Phone is required</div>
+                    <div *ngIf="f.phone.errors.pattern">Phone no must be valid</div>
                 </div>
             </div>
             
@@ -58,11 +59,13 @@
                         <input type="password" formControlName="password" [(ngModel)]="customer.Passwords" class="form-control" placeholder="Password">
                         <div id="err"  *ngIf="submitted && f.password.errors">
                             <div *ngIf="f.password.errors.required">Password is required</div>
+                            <div *ngIf="f.password.errors.minlength">Password must be minimum of length 6</div>
+                            <div *ngIf="f.password.errors.maxlength">Password must be maximum of length 10</div>
                         </div>
                         </div>
     
             <div class="form-group">
-                <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
+                <label for="password" class="col-sm-4 control-label">Confirm Password*</label>
                 <input type="password" id="password" formControlName="confirmPassword" placeholder="Password" class="form-control">
                 <div id="err"  *ngIf="submitted && f.confirmPassword.errors">
                    <div *ngIf="f.confirmPassword.errors.required">Confirm password is required</div>
@@ -73,26 +76,40 @@
     
             <div class="form-group">
                 <label class="col-sm-3 control-label">Address*</label><br>
-            <textarea cols="78"  formControlName="address" [(ngModel)]="customer.Address" placeholder="Name"></textarea>
+            <textarea cols="78"  formControlName="address" [(ngModel)]="customer.Address" placeholder="Address"></textarea>
             <div id="err"  *ngIf="submitted && f.address.errors">
                 <div *ngIf="f.address.errors.required">Address is required</div>
             </div>
     
             </div>
-        
-        
+
             <div class="form-group">
+                <label class="col-sm-3 control-label">Card Type*</label><br>
+                <div style="margin-left: 15px;">
+                  <input type="radio" id="f-option" value="Gold" class="input" formControlName="cardtype" [(ngModel)]="customer.Card_Type">
+                  <label for="f-option">Gold</label>
+                  <input type="radio" id="s-option" value="Titanium" class="input" formControlName="cardtype" [(ngModel)]="customer.Card_Type">
+                  <label for="s-option">Titanium</label>
+                  
+                </div>
+                <div id="err"  *ngIf="submitted && f.cardtype.errors">
+                <div *ngIf="f.cardtype.errors.required">Card Type is required</div>
+               </div>
+            </div>
+
+            <!-- <div class="form-group">
            <label class="col-sm-3 control-label">Card Type*</label>
             <input style="width:20px;" type="radio" value="Gold" class="input" formControlName="cardtype" [(ngModel)]="customer.Card_Type">Gold
             <input type="radio" value="Titanium" class="input" formControlName="cardtype" [(ngModel)]="customer.Card_Type">Titanium
             <div id="err"  *ngIf="submitted && f.cardtype.errors">
                 <div *ngIf="f.cardtype.errors.required">Card Type is required</div>
-            </div></div>
+            </div></div> -->
     
             
             <div class="form-group">
             <label class="col-sm-3 control-label">Select Bank*</label>
                 <select  formControlName="banks" [(ngModel)]="customer.Select_Bank" class="form-control">
+                <option value="" disabled selected >Select Bank</option>
                 <option value="HSBC Bank">HSBC Bank</option>
                 <option value="State Bank of India">State Bank of India</option>
                 <option value="City Bank">City Bank</option>
@@ -111,10 +128,11 @@
         
             
             <div class="form-group">
-            <label class="col-sm-3 control-label">Account Number*</label><br>
+            <label class="col-sm-4 control-label">Account Number*</label><br>
             <input type="text" formControlName="accountno" [(ngModel)]="customer.Saving_Account_No" class="form-control" placeholder="Account number">
             <div id="err"  *ngIf="submitted && f.accountno.errors">
                 <div *ngIf="f.accountno.errors.required">Account number is required</div>
+                <div *ngIf="f.accountno.errors.minlength">Enter valid account no</div>
             </div>
             </div>
     
@@ -122,48 +140,31 @@
             <div class="form-group">
             <label class="col-sm-3 control-label">IFSC*</label><br>
             <input type="text" formControlName="ifsc" [(ngModel)]="customer.IFSC_Code" class="form-control" placeholder="IFSC">
-            <div id="err"  *ngIf="submitted && f.accountno.errors">
-                <div *ngIf="f.accountno.errors.required">IFSC is required</div>
+            <div id="err"  *ngIf="submitted && f.ifsc.errors">
+                <div *ngIf="f.ifsc.errors.required">IFSC is required</div>
+                <div *ngIf="f.ifsc.errors.pattern">Enter valid ifsc code</div>
             </div>
-            </div>    
-
-<!-- upload -->
-
-<!-- <div class="text-center"> 
-	<input class="form-control" type="file"
-			(change)="onChange($event)"> 
-
-	<button (click)="onUpload()" 
-		class="btn btn-success"> 
-		Upload 
-	</button> 
-</div>  -->
-
-<!-- Shareable short link of uoloaded file -->
-<!-- <div *ngIf="shortLink"> 
-	<a [routerLink]="['/registerCustomer']" routerLinkActive="router-link-active" ></a> 
-</div>  -->
-
-<!--Flag variable is used here-->
-<!-- <div class="container" *ngIf="loading"> 
-	<h3>Loading ...</h3> 
-</div>  -->
-
-    
-    
-    
-
-
-
-
-
-<!-- upload end -->
+            </div> 
+             
+            <div class="form-group">
+                <label  class="col-sm-4 control-label">Upload Adhar Card*</label><br>
+                <input class="form-control" type="file"
+                       id="file" (change)="onChange($event)"> 
+             
+                <a (click)="onUpload()"  
+                    class="btn btn-primary btn-block" style="width: 100px;margin-top: 10px;background-color: rgb(245, 27, 81);"> 
+                    Upload 
+            </a> 
+            </div> 
+            <div class="container" *ngIf="loading"> 
+                <p>Uploaded </p> 
+            </div> 
         
             </div> 
             <br>
             <div style="text-align: center; border: 0px;">
-                <button class="btn btn-primary btn-block">Register</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <br><button type="reset" (click)="onReset()">Reset</button>
+                <button class="btn btn-primary btn-block" style="margin-bottom: 10px;">Register</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br><button class="btn btn-primary btn-block" style="margin: 10px;width: 100px;margin: auto;" type="reset" (click)="onReset()">Reset</button>
     
             <p>Already a member?<a [routerLink]="['/login']">Login Here</a></p>
         </div>

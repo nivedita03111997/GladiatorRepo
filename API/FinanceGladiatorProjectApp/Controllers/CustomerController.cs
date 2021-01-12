@@ -18,14 +18,21 @@ namespace FinanceGladiatorProjectApp.Controllers
     [HttpGet]
     public HttpResponseMessage Get(int id)//customerId
     {
-      tbl_Customer customer = entities.tbl_Customer.Where(c => c.Customer_Id == id).FirstOrDefault();
-      if (customer != null)
+      try
       {
-        return Request.CreateResponse(HttpStatusCode.OK, customer);
+        tbl_Customer customer = entities.tbl_Customer.Where(c => c.Customer_Id == id).FirstOrDefault();
+        if (customer != null)
+        {
+          return Request.CreateResponse(HttpStatusCode.OK, customer);
+        }
+        else
+        {
+          return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Customer does not exist..");
+        }
       }
-      else
+      catch (Exception)
       {
-        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Customer does not exist..");
+        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Could not load");
       }
 
     }
@@ -68,7 +75,7 @@ namespace FinanceGladiatorProjectApp.Controllers
     public HttpResponseMessage Register(tbl_Customer customer)
     {
       if ((customer.Customer_Name == null) || (customer.Email == null) || (customer.Phone_No == null) || (customer.Username == null) || (customer.Passwords == null) ||
-            (customer.Address == null) || (customer.Card_Type == null) || (customer.Select_Bank == null) || (customer.Saving_Account_No == null) || (customer.IFSC_Code == null)
+            (customer.Address == "") || (customer.Card_Type == null) || (customer.Select_Bank == null) || (customer.Saving_Account_No == null) || (customer.IFSC_Code == null)
               || (customer.Date_of_Birth == null))
       {
         return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Could not register customer");
@@ -76,10 +83,10 @@ namespace FinanceGladiatorProjectApp.Controllers
       else
       {
         entities.tbl_Customer.Add(customer);
-
+        entities.SaveChanges();
+        return Request.CreateResponse(HttpStatusCode.Created, customer);
       }
-      entities.SaveChanges();
-      return Request.CreateResponse(HttpStatusCode.Created, customer);
+      
 
     }
   }
